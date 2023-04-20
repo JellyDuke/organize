@@ -1,0 +1,36 @@
+
+3일째 
+
+이클립스의 자바 개념을 배웠다.
+src는 source이다.
+bin과 src의 파일이 있다.
+이클립스에서 scr 오른쪽 클릭 -> show in -> system explorer
+파일의 위치를 알 수 있다.
+
+bin과 src에서는 내가 한 코딩 파일이 저장 되어 있다.
+bin에는 class 확장자, src는 java확장자 이다.
+
+main을 쓰고 ctrl+spacebar를 쓰면 자동 완성을 사용 할 수 있다.
+public static void main(String[] args) {} <- main 메소드라 부른다.
+public static void 메소드라 한다.
+
+메소드: 기능 | void: 실행 | public: 접근, 보안 | static:메모리 저장, 호출|
+
+{ <-열려서 } <- 닫힌다.
+
+들여쓰기를 잘 해야 가독성이 높아진다.
+
+package c0;
+
+public class C0420 {
+  public static void main(String[] args) {
+	  syso ctrl+spacebar -> System.out.println(); -> System.out.println("2023-04-20");
+    System.out.println("목요일");
+}
+}
+(System 에 있는 out 출력 print를 해라 (내용); ln은 줄바꿈) 
+
+ctrl + shift + f => 정렬 키
+ctrl + spacebar => 자동완성 키
+
+주석 처리 //한줄 주석처리 혹은 /* 범위 주석 */
