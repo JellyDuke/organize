@@ -8,8 +8,58 @@ public class 이름 {
   //필드
   //메소드
   //생성자
-  등을 만들 수 있다.
-  public static void main(String[] args) {
-  //애는 메소드에 해당한다.
-	}
+  //등을 만들 수 있다.
+  public static void main(String[] args) { //애는 메소드에 해당한다.
+  
+	/* 변수 */
+	/* 프로그램을 실행하는데 필요한
+	 * 데이터를 저장하기 위해
+	 * 메모리 공간안에 영역을 할당하고
+	 * 이름을 부여하는 것 
+	 * 변수 문법 [변수타입] [변수명] = [변수값;]
+	 */
+	 // 자료형 : 숫자 || 문자
+	 // 정수형 숫자 : byte, short, int, long, 
+	 
+	 /* 
+	 [byte  타입]: 1byte >> 8bit(하드디스크 용량 사용) [-127 ~ +127 총 256값을 저장함 값이 넘어가면 오류남]
+	 [short 타입]: 2byte >> 16bit
+	 [int   타입]: 4byte >> 32bit
+	 [long  타입]: 8byte >> 64bit
+	 */
+	 
+	 int number = 10; // 변수 선언하고 초기화
+	 int number2; //int 타입 변수 number2 선언
+	 number2 = 20; //number2 초기화
+	 int number3 = 30;
+	 int number4;
+	 ystem.out.println(number3);
+	 
+	 // System.out.println(number4); number4 에러 Exception
+	 
+	byte byteNum1 = 127;
+	short shortNum1 = 128;
+	int intNum1 = 100;
+	long longNum1 = 999999999L; //(L,1)
+	
+	//실수형 숫자
+	/* 
+	[float 타입]: 4byte
+	[double타입]: 8byte
+	*/
+	
+	float floatNum1 = 10.123F; //(F,1)
+	double doubleNum1 = 111.11234;
+	
+	//[boolean 타입] : true || false
+	boolean boolval = true;
+	boolean boolva2 = false;
+	boolean boolva3 = 10 > 20;
+	
+	//[char 타입]: 문자
+	// ''
+	char charVal1 = 'a'; //문자 처리 ' ' 싱글 쿼터
+	String strVal1 = "abcd"; //여러문자열 string " " 더블 쿼터 (기본형태가 아닌 class 참조형임)
+	} //int, double, boolean, String 앞으로 사용할 것.
 }
+전체 주석 ctrl + / => //
