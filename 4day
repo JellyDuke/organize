@@ -96,11 +96,31 @@ public class C2 {
 		int oracleScore = 80;*/
 		
 		int javaScore = 100, oracleScore = 80;
-		int totalScore = javaScore + oracleScore;
+		int totalScore = javaScore + oracleScore; //연산자 사용이 많아지면 느려짐 그래서 이렇게 변수 지정.
 		System.out.println(totalScore);
 		System.out.println(totalScore/2);
 		//System.out.println(javaScore + oracleScore);
 		//System.out.println((javaScore + oracleScore)/2);
+		String name = "박주호";
+		String birth = "2001-12-01";
+		String myInfo = name + birth; //문자 이어서 나옴 
+		System.out.println(myInfo); // 박주호2001-12-01
+		
+		System.out.println(name + javaScore);// 박주호100
+		//덧셈은 숫자와 숫자만 (연산)
+		String testVal = "100";
+		System.out.println(javaScore);
+		
+		System.out.println(testVal);//문자를 숫자로 바꾸는건 메소드 사용 해야함
+		
+		int number = 10;
+		int intResult = number; //숫자를 문자로 바꿀 수 있음. [10]
+		String result = number; // number error. string에 저장 할수 없음 number를 type이 다름
+		
+		//숫자 10을 string에 저장 하기 위해서는
+		String result = 10 + ""; // => String result = number + ""; [10] 저장
+		
+		int re = Integer.parseInt("100"); //int 숫자를 문자로 저장 하기 위해선 메소드를 사용.
 	}
 }
 
