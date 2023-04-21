@@ -14,7 +14,7 @@ main을 쓰고 ctrl+spacebar를 쓰면 자동 완성을 사용 할 수 있다.
 public static void main(String[] args) {} <- main 메소드라 부른다.
 public static void 메소드라 한다.
 
-메소드: 기능 | void: 실행 | public: 접근, 보안 | static:메모리 저장, 호출| main: 시작점
+메소드: 기능 | void: 실행 | public: 접근, 보안 | static:메모리 저장, 호출 | main: 시작점
 
 { <-열려서 } <- 닫힌다.
 
