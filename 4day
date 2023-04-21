@@ -1,0 +1,15 @@
+4일차
+
+public class 이름 {}
+여기서는 이름을 바꿔 줄때 오류가 난다.
+class 파일 이름을 바꾸자.
+
+public class 이름 {
+  //필드
+  //메소드
+  //생성자
+  등을 만들 수 있다.
+  public static void main(String[] args) {
+  //애는 메소드에 해당한다.
+	}
+}
