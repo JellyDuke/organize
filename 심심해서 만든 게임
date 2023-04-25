@@ -1,0 +1,60 @@
+import random
+
+print("방탈출 게임에 오신 것을 환영합니다!")
+
+# 방 생성
+room = []
+for i in range(10):
+    room.append([random.randint(0, 1) for j in range(10)])
+
+# 캐릭터 시작 위치
+x, y = 0, 0
+
+while True:
+    # 현재 위치 정보
+    print("현재 위치:", x, y)
+    
+    # 랜덤 이벤트
+    event = random.randint(1, 10)
+    if event == 1:
+        print("귀신 나타남! 게임 종료!")
+        break
+    elif event == 2:
+        print("보물 발견!")
+    elif event == 3:
+        print("체력 회복 아이템 획득!")
+        
+    # 방 탐색
+    if room[x][y] == 0:
+        print("이 방은 빈 방입니다.")
+    else:
+        print("몬스터가 출현했습니다!")
+        
+    # 이동 방향 입력 받기
+    direction = input("이동할 방향을 입력하세요 (w: 위, a: 왼쪽, s: 아래, d: 오른쪽): ")
+    
+    # 이동 처리
+    if direction == 'w':
+        x -= 1
+    elif direction == 'a':
+        y -= 1
+    elif direction == 's':
+        x += 1
+    elif direction == 'd':
+        y += 1
+    else:
+        print("잘못된 입력입니다. 다시 입력하세요.")
+        continue
+    
+    # 이동 후 위치 검사
+    if x < 0 or x > 9 or y < 0 or y > 9:
+        print("범위를 벗어났습니다. 다시 입력하세요.")
+        if x < 0:
+            x = 0
+        elif x > 9:
+            x = 9
+        elif y < 0:
+            y = 0
+        elif y > 9:
+            y = 9
+        continue
