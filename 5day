@@ -96,4 +96,72 @@ public class C02 {
 		System.out.println(!boolVal);
 	}
 }
+	
+	
+	
+package p0425; 
+import java.util.Scanner;
+public class Ex03_Scanner {
+	public static void main(String[] args) {
+		/* Scanner 클래스 */
+		//Scanner : 타입, scan : 객체 이름
+		Scanner Scan = new Scanner(System.in); //<- ctrl+shift+o -> import 생성
+		
+		//scan.nextInt();  정수를 입력받는 기능
+		System.out.println("숫자를 입력>>");
+		int number = scan.nextInt();
+		System.out.println("입력받은 수 : " + number);
+		
+		scan. next(); // 문자를 입력받는 기능
+		System.out.println("문자를 입력>>");
+		String strVal = scan.next(); // 공백입력을 안받음, 공백사용 하려면 nextline 사용해야됨.
+		System.out.println("입력받은 문자: "+ strVal);
+	}	
+
+}
+
+package p0425;
+
+public class C4 {
+
+	public static void main(String[] args) {
+		//스캐너로 숫자를 두개 입력
+		Scanner scan = new Scanner(System.in);
+		int number1,number2;
+		System.out.println("<첫번째 숫자 입력>");
+		number1 = scan.nextInt();
+		
+		System.out.println("<두번째 숫자 입력>");
+		number2 = scan.nextInt();
+		System.out.println("덧셈: " + (number1+number2));
+		System.out.println("뺄셈: " +(number1-number2));
+		System.out.println("곱셈: " +(number1*number2));
+		System.out.println("나눗셈: " +(number1/number2));
+		System.out.println("나머지: " +(number1%number2));
+
+	}
+
+}
+
+package p0425;
+import java.util.Scanner;
+public class C5 {
+	public static void main(String[] args) {
+		int coffeePrice = 3000;
+		/*
+		 * 내가 가지고 있는 돈을 입력 받아서 커피를 구매 했을 때 남은 잔액을 출력
+		 */
+		System.out.println("초기 금액을 설정하세요:");
+		Scanner scan = new Scanner(System.in);
+		int money = scan.nextInt();
+
+		if (money >= coffeePrice) {
+			System.out.println("잔액은" + (money - coffeePrice) + "입니다.");
+		} else {
+			System.out.println("돈이 " +(money-coffeePrice)+" 만큼 부족합니다.");
+		}
+	}
+
+}
+
 
