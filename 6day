@@ -1,0 +1,112 @@
+6일차
+
+package p0426;
+public class Ex01_IF {
+	public static void main(String[] args) {
+    /* 조건문 - if */
+    /*
+      if(조건식){
+         조건식이 true 일 경우 실행되는 부분
+      }
+       else{
+        조건식이 false 일 경우 실행되는 부분
+      }
+    */
+    System.out.println("if문 시작");
+		boolean boolVal = 10 > 20;
+		if (boolVal) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		System.out.println("if문 종료");
+    
+    int score = 90;
+		if (score >= 90) {
+			System.out.println("A학점입니다.");
+		}
+		else if(score >= 80) {
+			System.out.println("B학점입니다.");
+		}
+		else {
+			System.out.println("C학점입니다.");}
+      
+      //변수 사용 범위
+      int num1 = 1;
+      int num2 = 2;
+      if (num1 < num2){
+        System.out.println("num1이 num2보다 작다");
+        int num3 = 10;
+        System.out.println("num3 : " + num3);
+		}   System.out.println("num3 : " + num3); // <- num3 오류
+	}
+}
+
+package p0426;
+public class Ex02_If {
+	public static void main(String[] args) {
+  
+		/*if(조건식1) {
+			조건식이1 true 일 경우
+		} else if(조건식2) {
+			조건식1이 false 이고,
+			조건식2가 true 일 경우
+		} else if (조건식3) {
+			조건식 1 false
+			조건식 2 false
+			조건식 3 true 일 경우
+		} else {
+			조건식 1,2,3이 모두 false일 경우
+		*/
+		
+		int num = 100;
+		System.out.println("if문 시작");
+		if ( num > 50) {
+			System.out.println("50보다 크다");
+		}
+		else if (num > 40){
+			System.out.println("40보다 크다");
+		}
+		else if (num > 30){
+			System.out.println("30보다 크다");
+		}
+		System.out.println("if문 종료");
+		
+		int num2 = 100;
+		if ( num2 > 50) {
+			System.out.println("50보다 크다");
+		}
+		if (num2 > 40){
+			System.out.println("40보다 크다");
+		}
+    if (num2 > 30){
+			System.out.println("30보다 크다");
+		}
+	}
+}
+
+package p0426;
+
+public class Ex03_IF {
+	public static void main(String[] args) {
+		int score = 88;
+    //if 문안에 for문 혹은 for문안에 if문 사용 가능 while 문도 가능.
+		if(score >= 90) { // 85~100: A+, 90~94: A0
+			if(score >= 95) {
+				System.out.println("A+입니다.");
+			}
+			else {
+				System.out.println("A0입니다.");
+			}
+		} else if(score >= 80) {
+			System.out.println("B입니다.");
+      //85~ 89 B+
+      //80~ 84 B0
+		}else if (score >= 70) {
+			System.out.println("C입니다.");
+		}else {
+			System.out.println("재수강입니다.");
+
+		}
+	}
+}
