@@ -110,3 +110,155 @@ public class Ex03_IF {
 		}
 	}
 }
+
+package p0426;
+import java.util.Scanner;
+public class Ex04_if {
+	public static void main(String[] args) {
+		/*Scanner scan = new Scanner(System.in);
+		System.out.println("[1]메뉴1 [2]메뉴2");
+		System.out.println("메뉴선택 >>");
+		int selectMenu = scan.nextInt();
+		
+		if(selectMenu == 1) {
+			System.out.println("[1]선택");
+		}
+		else if (selectMenu == 2) {
+			System.out.println("[2]선택");
+		}
+		*/
+		Scanner scan = new Scanner(System.in);
+		int[] price = {2000, 3500};
+		System.out.println("현재 가지고 있는 돈>>");
+		int money = scan.nextInt();
+		System.out.println("[1]아메리카노 "+price[0]
+				+ " [2]바닐라라떼 "+price[1]);
+		System.out.println("메뉴선택>>");
+		int SeclectMenu = scan.nextInt();
+		if(SeclectMenu == 1) {
+			System.out.println("[1]아메리카노(2000)");
+		}
+		else if(SeclectMenu == 2) {
+			System.out.println("[2]바닐라라떼(3500)");
+		}
+		if (money>=price[SeclectMenu-1]) {
+			money-=price[SeclectMenu-1];
+			System.out.println("잔액이"+money+"입니다" );
+		}else {
+			System.out.println("잔액이 모자랍니다." );
+		}
+	}
+}
+
+
+package p0426;
+import java.util.Scanner;
+public class Ex05_IfQuestion {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String A = "==============================";
+		String B = "========== [결제 방법] ==========";
+		String C = "1.카드결제 2. 현금결제";
+		
+		System.out.println("========== [메뉴판] ==========");
+        System.out.println("1. 아이스아메리카노[2000]\n2. 바닐라라떼[3500]");
+		System.out.println(A);
+		System.out.println("무엇을 드시겠습니까? [1][2]: ");
+		boolean menuCheck = true;
+		int SeclectMenu = scan.nextInt();
+		if(SeclectMenu == 1 ) { //메뉴 1번째 선택
+			System.out.println("2000원입니다. 결제하시겠습니까?");
+			System.out.println(B);
+			System.out.println(C);
+			System.out.println(A);
+			int A1 = scan.nextInt();
+			if(A1 == 1 ) {//결제 1번째
+				System.out.println("당신의 통장은: ");
+				int money = scan.nextInt();	
+
+				if(money>2000) {
+					money = money - 2000;
+					System.out.println("결제되었습니다.");
+					System.out.println("통장에 돈이" + money +"만큼 남았습니다.");
+					}
+					else if(money<2000) {
+						System.out.println("돈이 모자랍니다.");
+					}
+				}
+			else if(A1 == 2) {//결제 2번째
+				System.out.println("입금하십시오.: ");
+				int money = scan.nextInt();
+				if(money>2000) {
+				money = money - 2000;
+				System.out.println("잔돈이" + money +"만큼 남았습니다.");
+				}
+				else if(money<2000) {
+					System.out.println("돈이 모자랍니다.");
+				}
+			}
+			else {
+				System.out.println("올바른 메뉴를 선택하세요.");
+				menuCheck = false;
+			}
+		}
+		
+		
+		else if(SeclectMenu == 2) {//메뉴 선택 2번째
+			System.out.println("3500원입니다. 결제하시겠습니까?");
+			System.out.println(B);
+			System.out.println(C);
+			System.out.println(A);
+			int A2 = scan.nextInt();
+			if(A2==1) { //결제 1번선택시
+				System.out.println("당신의 통장은: ");
+				int money = scan.nextInt();
+				if(money>3500) {
+					money = money - 3500;
+					System.out.println("결제되었습니다.");
+					System.out.println("잔돈이" + money +"만큼 남았습니다.");
+					}
+					else if(money<3500) {
+						System.out.println("돈이 모자랍니다.");
+					}
+			}
+			
+			
+			else if(A2 == 2) {//결제 2번 선택시
+				System.out.println("입금하십시오.: ");
+				int money = scan.nextInt();
+				if(money>3500) {
+					money = money - 3500;
+					System.out.println("잔돈이" + money +"만큼 남았습니다.");
+					}
+					else if(money<3500) {
+						System.out.println("돈이 모자랍니다.");
+					}
+			}
+			else {
+				System.out.println("올바른 메뉴를 선택하세요. ");
+				menuCheck = false;
+			}
+		}
+		else {
+			System.out.println("올바른 메뉴를 선택하세요. ");
+			menuCheck = false;
+		}
+	
+		/*
+		 * 1.커피 메뉴 출력 1,2
+		 * 메뉴선택
+		 * 결제 방법 출력
+		 * 결제 방법 선택
+		 * 카드결제 일 경우 결제 되었습니다. 출력
+		 * 현금결제 일 경우
+		 * 투입 금액 입력
+		 * 결제 후 거스름돈
+		 */
+
+			}
+		}
+	
+	
+
+
+
