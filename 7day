@@ -1,0 +1,56 @@
+7일차
+
+package p0427;
+public class Case {
+	public static void main(String[] args) {
+		
+		int num3 = 10; //if문 int는 숫자로 비교가 가능하지만 string 문자열은 ==로 비교가 안된다. 그래서 메소드로 확인함.
+		switch(num3) { 
+		case 10:
+			int num4 = 20;
+			System.out.println("case 10 num4: " +num4);
+			break; 
+			default:
+				//int num4 = 40;
+		}
+	}
+}
+//System.out.println(strVal.equals("A")); 메소드 문자열을 비교하는 법.
+
+package p0427;
+import java.util.Scanner;
+public class Ex03_Switchcase {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("문자입력>>");
+		String strVal = scan.next();
+		System.out.println("strVal : " + strVal);
+		
+		  switch(strVal) { case "A": System.out.println("A이다."); break;
+		  
+		  case "B":
+		   System.out.println("B이다.");
+		   break;
+		  
+		  case "ABC":
+		   System.out.println("ABC이다."); 
+		   break; 
+		   default:
+		  }
+		  System.out.println("switch문 종료");
+		  System.out.println("if문 시작");
+		  
+		if (strVal.equals("A")) {
+			System.out.println("A이다.");
+		} else if (strVal.equals("B")) {
+			System.out.println("B이다.");
+		} else if (strVal.equals("ABC")) {
+			System.out.println("ABC이다.");
+		}
+		System.out.println("if문 종료");
+		
+		System.out.println(strVal == "A"); //false
+		System.out.println(strVal.equals("A")); //true
+	}
+}
