@@ -9,3 +9,75 @@ public class Ex01_for {
 		// i = 1 .... 1 = 10
 	}
 }
+package p0428;
+public class Ex02_for {
+	public static void main(String[] args) {
+		int i;
+		for(i = 0; i < 5; i++) {	
+		}
+		System.out.println("for문 종료");
+		System.out.println("i = " + i);
+		System.out.println();
+		//1~10 1+2+3...9+10 = 55
+		//int sum = 0; 총합을 저장 할 변수
+//		sum = sum + 1;
+//		sum = sum + 2;
+//		sum = sum + 3;
+//		sum = sum + 4;
+//		sum = sum + 5;
+//		sum = sum + 6;
+//		sum = sum + 7;
+//		sum = sum + 8;
+//		sum = sum + 9;
+//		sum = sum + 10;
+		int sum = 0;
+		for(int j = 0; j<=10; j++) {
+//			j+=j -> 2 6 14 sum의 총합은 22
+			sum = sum + j; 
+		}
+		System.out.println("총합은 : " + sum);
+		
+	}
+
+}
+package p0428;
+import java.util.Scanner;
+public class Ex03_for {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("?~10까지 총합");
+		System.out.println("시작할 숫자 :");
+		int startNum = scan.nextInt();
+		System.out.println("끝날 숫자 :");
+		int endNum = scan.nextInt();
+
+		int sum = 0;
+		for(int i = startNum; i<= endNum; i++) {
+			sum = sum + i; 
+		}
+		System.out.println("총합은 : " + sum);
+	}
+}
+
+package p0428;
+public class Ex04_for {
+	public static void main(String[] args) {
+		for(int i = 0; i < 11; i++) {	
+			//break; continue;
+			// i 가 5이면 중지
+			if(i == 5) {
+				break;
+			}
+			System.out.println(" i = " +i);
+		}
+		System.out.println();
+		for(int i = 0; i < 11; i++) {	
+			//break; continue;
+			// i 가 5이면 계속
+			if(i == 5) {
+				continue; //5 건너뜀
+			}
+			System.out.println(" i = " +i);
+		}
+	}
+}
