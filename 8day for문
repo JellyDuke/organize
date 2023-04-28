@@ -50,7 +50,6 @@ public class Ex03_for {
 		int startNum = scan.nextInt();
 		System.out.println("끝날 숫자 :");
 		int endNum = scan.nextInt();
-
 		int sum = 0;
 		for(int i = startNum; i<= endNum; i++) {
 			sum = sum + i; 
@@ -58,7 +57,6 @@ public class Ex03_for {
 		System.out.println("총합은 : " + sum);
 	}
 }
-
 package p0428;
 public class Ex04_for {
 	public static void main(String[] args) {
@@ -79,5 +77,143 @@ public class Ex04_for {
 			}
 			System.out.println(" i = " +i);
 		}
+	}
+}
+
+package p0428;
+import java.util.Scanner;
+public class Ex05_for {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("시작할 숫자 :");
+		int startNum = scan.nextInt();
+		System.out.println("종료 숫자 :");
+		int endNum = scan.nextInt();
+		int sum = 0; //총합을 저장할 변수
+		System.out.println("for문 시작");
+		for(int i = startNum; i<= endNum; i++) {
+			System.err.print(i+" ");
+			// 3의 배수인 경우의 합
+			if(i % 3 != 0) {
+				continue;
+			}
+			sum = sum + i;
+
+			
+		}
+		System.out.println("\nfor문 종료");
+		System.err.println("sum : " +sum);
+	}
+}
+package p0428;
+import java.util.Scanner;
+public class Ex06_for {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("시작할 숫자 :");
+		int startNum = scan.nextInt();
+		System.out.println("종료 숫자 :");
+		int endNum = scan.nextInt();
+		System.out.println("for문 시작");
+		int count=0; //3의 배수를 저장할 변수
+		int sum = 0; //총합 저장 변수
+		for(int i = startNum; i<= endNum; i++) {
+			System.err.print(i+" ");
+			if( i % 3 == 0) {
+			count= count + 1; // count++ <=> count = count + 1
+			sum = sum + i;
+			}
+		}
+		System.out.println("\nfor문 종료");
+		System.out.println("3의 배수의 개수 : " + count +"개");
+		System.out.println("총합은"+sum);
+	}
+}
+
+package p0428;
+import java.util.Scanner;
+public class Ex07_Question {
+	public static void main(String[] args) {
+//		1. 1~30번 까지의 학생
+//		2. 짝수번 학생, 홀수번 학생
+//		3. 짝수 : 통새우와퍼세트 9700원
+//		   홀수 : 와퍼세트 8900원
+//		4. 짝수번 통새우와퍼세트의 총액 몇명.
+//		   홀수번 와퍼세트의 총액
+		Scanner scan = new Scanner(System.in);
+		System.out.println("학생 수 범위(1) :");
+		int startNum = scan.nextInt();
+		System.out.println("학생 수 범위(2) :");
+		int endNum = scan.nextInt();
+		System.out.println("영수증");
+		int student = 0;
+		int studenta = 0;
+		int Shrimp=0, WHOPPER = 0; //총합 저장 변수
+		for(int i = startNum; i<= endNum; i++) {
+			System.err.print(i+" ");
+			if( i % 2 == 0) {
+			student= student + 1;
+			Shrimp = Shrimp + 9700;
+			}
+			if(i%2 == 1) {
+				studenta = studenta + 1;
+				WHOPPER = WHOPPER + 8900;
+			}
+		}
+		System.out.println("\n짝수번 통새우와퍼세트 총액: "+Shrimp);
+		System.out.println("짝수 학생 총 수: " + student);
+		System.out.println("홀수번 통새우와퍼세트 총액: "+WHOPPER);
+		System.out.println("홀수 학생 총 수: " + studenta);
+	}
+}
+
+package p0428;
+import java.util.Scanner;
+public class Ex07_Question {
+	public static void main(String[] args) {
+//		1. 1~30번 까지의 학생
+//		2. 짝수번 학생, 홀수번 학생
+//		3. 짝수 : 통새우와퍼세트 9700원
+//		   홀수 : 와퍼세트 8900원
+//		5의 배수인 학생인 경우
+//		와퍼주니어 세트 6600원
+//		4. 짝수번 통새우와퍼세트의 총액 몇명.
+//		   홀수번 와퍼세트의 총액
+		String Air = "================================";
+		String AirB = "==============";
+		Scanner scan = new Scanner(System.in);
+		System.out.println("학생 수 범위(1) :");
+		int startNum = scan.nextInt();
+		System.out.println("학생 수 범위(2) :");
+		int endNum = scan.nextInt();
+		System.out.println(AirB+"영수증"+AirB);
+		int student = 0,  studenta = 0, studnetb = 0;
+		int Shrimp=0, WHOPPER = 0, child = 0; //총합 저장 변수
+		for(int i = startNum; i<= endNum; i++) {
+			if(i%5 == 0) {
+				studnetb = studnetb + 1;
+				child = child +6600;
+			}
+			else if( i % 2 == 0) {
+			student= student + 1;
+			Shrimp = Shrimp + 9700;
+			}
+			else if(i%2 == 1) {
+				studenta = studenta + 1;
+				WHOPPER = WHOPPER + 8900;
+			}
+			
+		}
+		System.out.println("짝수번 통새우와퍼세트 총액: "+Shrimp);
+		System.out.println("짝수 학생 총 수: " + student);
+		System.out.println(Air);
+		System.out.println("홀수번 통새우와퍼세트 총액: "+WHOPPER);
+		System.out.println("홀수 학생 총 수: " + studenta);
+		System.out.println(Air);
+		System.out.println("5의 배수 와퍼주니어세트 총액:"+ child);
+		System.out.println("5의 배수 학생수: "+ studnetb);
+		System.out.println(Air);
+		System.err.println("총액"+(Shrimp+WHOPPER+child));
+		System.out.println(Air);
 	}
 }
