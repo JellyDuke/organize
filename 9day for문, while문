@@ -1,0 +1,100 @@
+9일차
+구구단.
+package p0501;
+import java.util.Scanner;
+public class Ex01_for {
+	public static void main(String[] args) {
+//		for (int i = 0; i <= 2; i++) {
+//			System.out.println("[i = " + i + "]");
+//			for (int j = 0; j <= 3; j++) {
+//				System.out.println("j =" + j);
+//			}
+//		}
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("<외울 구구단을 쓰세요>");
+//		int ABC = scan.nextInt();
+//		if (ABC == 1) {
+//			for (int i = 1; i <= 1; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 2) {
+//			for (int i = 2; i <= 2; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 3) {
+//			for (int i = 3; i <= 3; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 4) {
+//			for (int i = 4; i <= 4; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 5) {
+//			for (int i = 5; i <= 5; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 6) {
+//			for (int i = 6; i <= 6; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 7) {
+//			for (int i = 7; i <= 7; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 8) {
+//			for (int i = 8; i <= 8; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//		if (ABC == 9) {
+//			for (int i = 9; i <= 9; i++) {
+//				System.out.println("[구구단 " + i + "]");
+//				for (int j = 1; j <= 9; j++) {
+//					System.out.println(i + " x " + j + " = " + (j * i));
+//				}
+//			}
+//		}
+//
+//	}
+		for (int i = 2; i <= 9; i++) {
+			if (i < 7) { //7보다 클때만 해라
+				continue; // 위랑 동일
+			}
+			System.out.println();
+			for (int j = 1; j <= 9; j++) {
+				System.out.println(i + "X" + j + "=" + (i * j));
+			}
+		}
+	}
+}
