@@ -144,3 +144,130 @@ public class Ex02_While {
 		System.out.println("\nwhile문 종료");
 	}
 }
+
+package p0501;
+import java.util.Scanner;
+public class Ex03_while {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+//		boolean run = true;
+		while(true/*run 불리언 사용시*/) {
+			System.out.println("숫자입력>>");
+			int inputNum = scan.nextInt();
+			System.out.println("입력한 숫자 : " + inputNum);
+//			if(inputNum == 0) {
+//				break;
+//				run = false;
+//			}
+			switch(inputNum) {
+			case 0:
+				System.out.println("switch-case");
+//				run = false;
+				break;
+			}
+		}
+	}
+}
+
+package p0501;
+import java.util.Scanner;
+public class Ex03_while2 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		loopWhile:
+		while (true) {
+			System.out.println("숫자입력>>");
+			int inputNum = scan.nextInt();
+			System.out.println("입력한 숫자 : " + inputNum);
+			switch (inputNum) {
+			case 0:
+				System.out.println("switch-case");
+				break loopWhile;			
+			}
+		}
+	}
+}
+
+package p0501;
+import java.util.Scanner;
+public class Ex04_while {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int coffeeStock = 10; //커피 재고
+		int coffeePrice = 300; //한잔 가격
+		while(true) {
+			System.out.println("<돈을 넣어 주세요>");
+			int money = scan.nextInt(); 
+			//투입한 금액 커피 가격 비교 판매 조건 확인
+			if(money==coffeePrice) {
+				System.out.println("커피 1잔을 구매하였습니다.");
+				coffeeStock--;
+			}
+			else if(money > coffeePrice) {
+				System.out.println("커피 1잔을 구매하였습니다.");
+				System.out.println("거스름돈 "+ (money - coffeePrice));
+				coffeeStock--;
+			}
+			else {
+				System.out.println("돈이 부족합니다.");
+			}
+			if(coffeeStock <= 0) {
+				System.out.println("재고 소진");
+				break;
+			}
+		}
+	}
+}
+
+package p0501;
+import java.util.Scanner;
+public class Ex05_while {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int totalPrice = 10000;//목표 금액 혹은
+//		int totalPrice = 0; // 총 판매 금액
+		while(true) {
+			int coffeePrice = 0;
+			System.out.println("[1]아메리카노(2000) [2]바닐라라떼(3500)");
+			System.out.println("<메뉴를 선택하세요.>");
+			int selectMenu = scan.nextInt();
+			
+			switch(selectMenu) {// 선택한 메뉴에 대한 가격 지정
+			case 1: 
+				coffeePrice = 2000; 
+				break;// [1] 아메리카노를 선택한 경우
+			case 2: 
+				coffeePrice = 3500; 
+				break;// [2] 바닐라라떼를 선택한 경우
+			}
+			System.out.println("<돈을 넣어 주세요>");
+			int money = scan.nextInt();
+			
+			System.out.println("거스름돈: " + (money - coffeePrice)+ "원");//잔돈 계산
+			totalPrice=totalPrice-coffeePrice; //총 판매된 커피 계산.
+//			totalPrice=totalPrice+coffeePrice;
+			
+			if(totalPrice<=0) {
+				System.out.println("목표 수익 달성!");
+				break;
+			}
+//			if(selectMenu == 1) {
+//				money= money - 2000;
+//			}
+//			else if(selectMenu == 2 ) {
+//				money= money - 3500;
+//				
+//			}
+//			if(money<0) {
+//				System.out.println("돈이 모자랍니다.");
+//				
+//			}
+//			if(money>= 0) {
+//			System.out.println("결제 되었습니다.");
+//			System.out.println("거스름 돈은 :" + money +"입니다.");
+//			}
+		}
+		System.out.println("총 수익" + totalPrice + "원");
+		System.out.println("while문 종료");
+	}
+}
