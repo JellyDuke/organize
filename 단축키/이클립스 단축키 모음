@@ -1,0 +1,27 @@
+ctrl + shift + f : 정렬 키
+ctrl + spacebar : 자동완성 키
+ctrl + / : 한줄 주석처리
+
+Ctrl + shift + B : 현재 커서위치에 Break point설정/해제
+Ctrl + Shift + F : 소스코드 자동 정리
+Ctrl + Shift + G : 현재 커서가 위치한 특정 메써드나 객체, 필드를 Reference하고 있는 곳을 찾는다.
+Ctrl + Shift + J : 검색할 단어를 입력하면서 실시간으로 거꾸로 검색
+Ctrl + Shift + K : 이전찾기 (또는, 찾고자하는 문자열을 블럭으로 설정한 후 역으로 찾고자 하는 문자열을 찾아감.)
+Ctrl + Shift + L : 단축키 보기 Hint
+Ctrl + Shift + M : 캐럿이 위치한 대상에 필요한 특정 클래스 Import 시키기
+Ctrl + Shift + O : 소스에 필요한 패키지를 자동으로 Import 시키기
+Ctrl + shift + R : Open Resource. 모든 프로젝트에서 파일명 검색.
+Ctrl + Shift + S : 열려진 모든파일 저장 및 컴파일
+Ctrl + Shift + / : 선택 영역 Block Comment 설정
+Ctrl + Shift + \ : 선택 영역 Block Comment 제거
+
+Ctrl + D : 한줄삭제
+Ctrl + H : Find 및 Replace
+Ctrl + I : 소스 깔끔 정리(인덴트 중심의 자동구문정리)
+Ctrl + J : 검색할 단어를 입력하면서 실시간으로 검색
+Ctrl + K : 다음찾기(또는, 찾고자 하는 문자열을 블럭으로 설정한 후 키를 누른다.)
+Ctrl + L : 특정줄번호로 가기
+Ctrl + N : 새로운 파일 및 프로젝트 생성
+Ctrl + O : Outline 창 열기
+Ctrl + Q : 마지막 편집위치로 가기
+Ctrl + S : 저장 및 컴파일
