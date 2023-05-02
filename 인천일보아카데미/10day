@@ -1,0 +1,65 @@
+10일차
+
+package p0502;
+import java.util.Scanner;
+public class Ex01_While {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int number = 0;
+		boolean run = true;
+//		whileLoop: 라벨 달아서 while문 반복 중지 시키기 break whileLoop;
+		while (run) {// while문 시작
+			System.out.println("[1]증가 [2]감소 [3]종료");
+			System.out.println("선택>>");
+			int selectMenu = scan.nextInt(); //메뉴선택
+			switch (selectMenu) {// switch 시작
+			case 1: // 1번 메뉴 선택시
+				number++; // number = number + 1, number += 1;
+				break;
+			case 2: // 2번 메뉴 선택시
+				number--;
+				break;
+			case 3:// 3번 메뉴 선택시
+				run = false;
+				break; //혹은 whileLoop;
+			}// switch 종료
+			System.out.println("현재 값은" + number + "입니다.");
+		} // while문 종료
+	}
+}
+
+package p0502;
+import java.util.Scanner;
+public class Ex02_while {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int myBalance = 0;
+		boolean run = true;//while문을 반복수행하기 위한 변수
+		while (run) {// while문 시작
+			System.out.println("[1]입금 [2]출금 [3]잔고 [4]종료"); //메뉴 출력
+			System.out.print("메뉴 선택>>"); 
+			int selectMenu = scan.nextInt(); // 메뉴선택입력
+			switch (selectMenu) {// switch 시작
+			case 1: // 1번 메뉴 선택시
+				System.out.println("입금할 금액을 입력하세요.>>");
+				int deposit = scan.nextInt();
+				myBalance = myBalance + deposit; // myBalance += upNum
+				break;
+			case 2: // 2번 메뉴 선택시
+				System.out.println("출금할 금액을 입력하세요.>>");
+				int withdraw = scan.nextInt();
+				if (myBalance >= withdraw) {
+					myBalance -= withdraw;
+				} else {
+					System.out.println("돈이 모자랍니다.");
+				}
+				break;
+			case 3:// 3번 메뉴 선택시
+				System.out.println("현재 잔고는" + myBalance + "입니다.");
+				break;
+			case 4: // 4번 메뉴 선택시
+				run = false;
+			}// switch 종료
+		} // while문 종료
+	}
+}
