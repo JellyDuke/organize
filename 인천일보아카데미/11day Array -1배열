@@ -129,6 +129,8 @@ public class Ex04_Scores {
 		boolean run = true;
 		int[] scores = null;
 		int size = 0;
+		int max = 0;
+		int min = 0;
 		while(run) {
 			//1. 메뉴 출력
 			System.out.println("--------------------------------------");
@@ -164,10 +166,23 @@ public class Ex04_Scores {
 				}
 				break;
 			case 4://[4]성적분석 선택
-				
+				if(scores != null) {
+					min = scores[0];
+				for(int i = 0; i<scores.length; i++) {
+					if(max < scores[i]) {
+						max = scores[i];
+					}
+					else if(min > scores[i]) {
+						min = scores[i];
+					}
+				}
+				System.out.println("최대 값: "+max+ " 최소 값: "+ min);
+				}
 				break;
 			default://[5]종료
+				run = false;
 			}
 		}
 	}
 }
+
