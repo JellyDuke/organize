@@ -48,3 +48,25 @@ public class Ex01_Array {
 
 	}
 }
+
+package p0504;
+public class Ex02_Split {
+	public static void main(String[] args) {
+		String[] menuList = {"아메리카노:2000" , "바닐라라떼:3500", "아이스티:3000"};
+		String[] menuInfo = menuList[0].split(":"); //.split메소드(":"); :이걸 빼고 구분하기.
+		String menuName = menuInfo[0];
+		String menuPrice = menuInfo[1];
+		int price = Integer.parseInt(menuPrice);
+		
+		System.out.println(menuList[0]);
+		System.out.println("메뉴명: " + menuName);
+		System.out.println("가격: " + price + "원");
+		
+		String strVal = "010-4335-4586"; //"010", "4335", "4586"
+		String[] splitResult = strVal.split("-");
+		for(int i = 0; i<splitResult.length; i++) {
+			System.out.print(splitResult[i]+" ");
+		}
+	}
+}
+
