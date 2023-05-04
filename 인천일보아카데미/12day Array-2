@@ -53,10 +53,11 @@ package p0504;
 public class Ex02_Split {
 	public static void main(String[] args) {
 		String[] menuList = {"아메리카노:2000" , "바닐라라떼:3500", "아이스티:3000"};
+		
 		String[] menuInfo = menuList[0].split(":"); //.split메소드(":"); :이걸 빼고 구분하기.
-		String menuName = menuInfo[0];
-		String menuPrice = menuInfo[1];
-		int price = Integer.parseInt(menuPrice);
+		String menuName = menuInfo[0]; //menuInfo의 0번 인덱스의 값을 menuName에 저장
+		String menuPrice = menuInfo[1]; // menuInfo의 1번 인덱스의 값을 menuPrice에 저장
+		int price = Integer.parseInt(menuPrice);// 문자열에서 숫자로 변환 "2000" >> 2000 메소드 사용.
 		
 		System.out.println(menuList[0]);
 		System.out.println("메뉴명: " + menuName);
