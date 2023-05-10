@@ -1,0 +1,217 @@
+14일차 생성자
+----------------------------------------------------------------------------------
+package p0510;
+public class Ex01_ConstructorMain {
+	public static void main(String[] args) {
+		Ex01_Constructor obj01 = new Ex01_Constructor();
+		System.out.println(obj01.name);
+		System.out.println(obj01.number);
+		
+		//매개변수가 1개인 생성자로 obj02 생성
+		Ex01_Constructor obj02 = new Ex01_Constructor(20);
+		
+		//매개변수가 2개인 생성자로 obj03 생성
+		int num = 100;
+		int num2 = 20;
+		Ex01_Constructor obj03 = new Ex01_Constructor(num2,num);
+//		Ex01_Constructor obj04 = new Ex01_Constructor(100,"ABC");
+
+	}
+}
+
+public class Ex01_Constructor {
+	int number;  //번호
+	String name; //이름
+	
+	//기본 생성자
+	public Ex01_Constructor() {
+	}
+	//생성자 - 매개변수가 1개인 생성자
+	public Ex01_Constructor(int num) {
+		System.out.println("매개변수가 1개인 생성자 호출");
+		System.out.println("num : "+num);
+	}
+	//생성자 - 매개변수가 2개인 생성자
+	public Ex01_Constructor(int num,int num2) {
+		System.out.println("매개변수가 2개인 생성자 호출");
+		System.out.println("num : "+num);
+		System.out.println("num : "+num2);
+	}
+	//생성자 - 매개변수가 2개인 생성자
+	public Ex01_Constructor(int num,String str) {
+		System.out.println("매개변수가 2개인 생성자 호출");
+		System.out.println("num : "+num);
+		System.out.println("num : "+str);
+	}
+}
+----------------------------------------------------------------------------------
+package p0510;
+
+public class Ex02_User {
+	String id; // 아이디
+	String pw; // 비밀번호
+//		public Ex02_User(String id, String pw) {
+//			this.id = id;
+//			this.pw = pw;
+//		}
+
+	public Ex02_User() {
+
+	}
+// source -> generate field.. 생성
+	public Ex02_User(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+}
+package p0510;
+public class Ex02_UserMain {
+	public static void main(String[] args) {
+		String userId01 = "id01";
+		String userPw01 = "pw01";
+		Ex02_User user01 = new Ex02_User();
+		user01.id = userId01;
+		user01.pw = userPw01;
+		System.out.println("user01의 ID: "+ user01.id);
+		System.out.println("user01의 PW: "+ user01.pw);
+		
+		String userId02 = "id02";
+		String userPw02 = "pw02";
+		Ex02_User user02 = new Ex02_User(userId02,userPw02);
+		System.out.println("user02의 ID: "+ user02.id);
+		System.out.println("user02의 PW: "+ user02.pw);
+	}
+}
+----------------------------------------------------------------------------------
+package p0510;
+public class Ex03_Method {
+	
+	public Ex03_Method() {
+		
+	}
+//	void: 리턴값이 없는 메소드
+//  타입: 해당 타입의 값을 리턴하는 메소드
+//	메소드타입 메소드이름(매개변수1, 매개변수2....){
+//
+//	}
+	void voidMethod() {
+		System.out.println("voidMethod() 호출");
+	}
+	int intMethod() {
+		System.out.println("intMethod() 호출");
+		return 10;
+	}
+	int intVal;
+	String strVal;
+	
+	void plusOne() {
+		System.out.println("intVal값을 1 증가");
+		this.intVal++;
+	}
+	int plustwo() {
+		System.out.println("intVal값을 2 증가");
+		intVal = intVal +2;
+		return intVal; //intVal값을 반환
+	}
+}
+package p0510;
+
+public class Ex03_MethodMain {
+
+	public static void main(String[] args) {
+		Ex03_Method obj01 = new Ex03_Method();
+//		voidMethod() 호출
+		obj01.voidMethod();
+		
+//		intMethod() 호출
+		int result = 0;
+		System.out.println("result : "+ result);
+		result = obj01.intMethod();
+		System.out.println("result : " + result);
+//		obj01의 intVal 값 출력
+		System.out.println("intVal : " + obj01.intVal);
+//		obj01의 plusOne(); 호출
+		obj01.plusOne();
+		obj01.plusOne();
+		obj01.plusOne();
+		System.out.println("intVal : " + obj01.intVal);
+//		int resultVal = obj01.plustwo(); //반환
+		System.out.println(obj01.plustwo());
+	}
+}
+---------------------------------------------------------------------------------
+package p0510;
+public class UserInfo {
+	String userId;
+	String userPw;
+	String userName;
+	String UserPhone;
+	
+	public UserInfo(String userId, String userPw, String userName, String userPhone) {
+		super();
+		this.userId = userId;
+		this.userPw = userPw;
+		this.userName = userName;
+		UserPhone = userPhone;
+	}
+
+	public boolean loginCheck(String loginId, String loginPw) {
+		System.out.println("아이디 비밀번호 확인 중..");
+/*		boolean result = false;
+		if(this.userId.equals(loginId) && this.userPw.equals(loginPw)) {
+			result = true;
+		}*/
+		if(this.userId.equals(loginId) && this.userPw.equals(loginPw)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public void showInfo() {
+		System.out.println("아이디 :" + this.userId);
+		System.out.println("비밀번호 :" + this.userPw);
+		System.out.println("이름 :" + this.userName);
+		System.out.println("전화번호 :" + this.UserPhone);
+
+	}
+
+	@Override
+	public String toString() {
+		return "UserInfo [아이디=" + userId + ", 비밀번호=" + userPw + ", 이름=" + userName + ", 폰번호="
+				+ UserPhone + "]";
+	} //재 정의가 되어 있으면 주소값 즉 시스템프린트(myinfo)값이 주소값이 아닌 문자 값이 나옴.
+	
+}
+package p0510;
+import java.util.Scanner;
+public class UserMain {
+	public static void main(String[] args) {
+	UserInfo myInfo = new UserInfo("JH","3331","박주호","010-4335-4586");
+//	로그인 기능: 1. 아이디, 비밀번호 입력
+//			 2. 입력된 아이디, 비밀번호 회원정보와 일치하는지 확인
+//			 3. 일치하면 "로그인 성공"
+//			    일치하지 않으면 "아이디/비밀번호가 일치하지 않습니다."
+	Scanner scan = new Scanner(System.in);
+	System.out.println("아이디입력>>");
+	String loginId = scan.next();
+	System.out.println("비밀번호>>");
+	String loginPw = scan.next();
+//	입력된 아이디, 비밀번호 회원정보와 일치하는 지 확인
+//	확인된 결과 값을 반환하는 메소드
+	boolean Check = myInfo.loginCheck(loginId, loginPw); //check :: 일치 O true, 일치 X = false;
+	if(Check) {
+		//로그인 성공
+		//회원정보 출력 >> myInfo객체의 모든 필드값을 출력
+		//myInfo의 showInfo 메소드 호출
+		System.out.println("로그인 성공");
+		myInfo.showInfo();
+		System.out.println(myInfo);
+		} else {
+			//로그인 실패
+			System.out.println("로그인 실패");
+		}
+	}
+	
+}
+-----------------------------------------------------------------------------------
