@@ -1,0 +1,49 @@
+15일차
+-----------------------------------------------------------------------------------------------------------
+package p0511;
+public class Ex02_Member {
+	private String id;
+	private String pw;
+	
+//	public String getId() {
+//		return this.id;
+//	}
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+
+	public Ex02_Member(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+}
+
+package p0511;
+public class Ex02_MemberMain {
+	public static void main(String[]args) {
+		Ex02_Member memInfo = new Ex02_Member("jh","1111");
+//		System.out.println(memInfo.id);
+//		memInfo.id = "jh111";
+		String myId = memInfo.getId();
+		System.out.println(myId);
+		memInfo.setId("jh111");
+	}
+}
+-----------------------------------------------------------------------------------------------------------
