@@ -47,3 +47,162 @@ public class Ex02_MemberMain {
 	}
 }
 -----------------------------------------------------------------------------------------------------------
+package p0511;
+public class MemberInfo {
+//	회원정보
+//	아이디,비밀번호,이름,전화번호
+	private String mid, mpw, mname, mphone; //아이디, 비밀번호, 이름, 전화번호
+	
+	public String getMid() {
+		return mid;
+	}
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	public String getMpw() {
+		return mpw;
+	}
+	public void setMpw(String mpw) {
+		this.mpw = mpw;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public String getMphone() {
+		return mphone;
+	}
+	public void setMphone(String mphone) {
+		this.mphone = mphone;
+	}
+}
+package p0511;
+import java.awt.geom.GeneralPath;
+import java.util.Scanner;
+public class Memberjoin {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		//회원정보들을 저장할 배열 (회원 5명)
+		MemberInfo[] memList = new MemberInfo[5];
+		//회원가입
+		//1. 가입 정보를 입력
+		System.out.println("ID>>");
+		String loginId = scan.next();
+		System.out.println("Password>>");
+		String loginPw = scan.next();
+		System.out.println("name>>");
+		String name = scan.next();
+		System.out.println("phone Number>>");
+		String phoneN = scan.next();
+		//2. 입력된 정보를 MemberInfo의 객체에 저장
+		MemberInfo mem01 = new MemberInfo();
+		mem01.setMid(loginId);
+		mem01.setMpw(loginPw);
+		mem01.setMname(name);
+		mem01.setMphone(phoneN);
+		
+		//3. memList배열에 0번인덱스에 저장
+		memList[0] = mem01; //class타입의 저장;
+	}
+}
+-----------------------------------------------------------------------------------------------------------
+package p0511;
+public class MemberInfo {
+//	회원정보
+//	아이디,비밀번호,이름,전화번호
+	private String mid, mpw, mname, mphone; //아이디, 비밀번호, 이름, 전화번호
+	
+	
+	public String getMid() {
+		return mid;
+	}
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	public String getMpw() {
+		return mpw;
+	}
+	public void setMpw(String mpw) {
+		this.mpw = mpw;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public String getMphone() {
+		return mphone;
+	}
+	public void setMphone(String mphone) {
+		this.mphone = mphone;
+	}
+	public MemberInfo(String mid, String mpw, String mname, String mphone) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+		this.mname = mname;
+		this.mphone = mphone;
+	}
+}
+package p0511;
+import java.util.Scanner;
+public class Memberjoin {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		//회원정보들을 저장할 배열 (회원 5명)
+		MemberInfo[] memList = new MemberInfo[5];
+		//회원가입
+		//1. 가입 정보를 입력
+		System.out.println("ID>>");
+		String loginId = scan.next();
+		System.out.println("Password>>");
+		String loginPw = scan.next();
+		System.out.println("name>>");
+		String name = scan.next();
+		System.out.println("phone Number>>");
+		String phoneN = scan.next();
+		
+/*		//2. 입력된 정보를 MemberInfo의 객체에 저장
+		MemberInfo mem01 = new MemberInfo();
+		mem01.setMid(loginId); //mid 필드에 입력한 아이디
+		mem01.setMpw(loginPw);
+		mem01.setMname(name);
+		mem01.setMphone(phoneN);
+*/	
+		MemberInfo mem01
+		= new MemberInfo(loginId,loginPw,name,phoneN);
+		//3. memList배열에 0번인덱스에 저장
+		memList[0] = mem01; //class타입의 저장;
+		
+		//4. memList배열의 0번 인덱스에 있는 회원 정보 출력
+		System.out.println("아이디 : " + memList[0].getMid());
+		System.out.println("비밀번호 : " + memList[0].getMpw());
+		System.out.println("이름 : " + memList[0].getMname());
+		System.out.println("폰넘버 : " + memList[0].getMphone());
+
+		//5. 2번 회원 가입 >> 가입할 아이디 >> 중복확인
+		System.out.println("가입할 아이디>>");
+		loginId = scan.next();
+		boolean idCheck = true; //false면 중복입니다.
+		for(int i = 0; i < memList.length; i++) {
+			if( memList[i] != null) { //널이 아닐 경우에만
+				if(loginId.equals(memList[i].getMid()) ) { //널인경우 오류남
+					idCheck = false;
+				}
+			}
+		}
+		if(idCheck) {
+			System.out.println("사용 가능한 아이디 입니다.");
+		}else {
+			System.out.println("중복된 아이디 입니다.");
+		}
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
