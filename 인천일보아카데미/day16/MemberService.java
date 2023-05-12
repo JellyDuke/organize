@@ -1,5 +1,7 @@
 package p0512;
 import java.util.Scanner;
+
+import p0511.Memberjoin;
 public class MemberService {
 	
 	//기능 정의 클래스
@@ -30,6 +32,7 @@ public class MemberService {
 		}
 		//회원가입 처리
 		//1. 가입정보 입력
+		//아이디 중복확인 기능 메소드
 		System.out.println("ID>>");
 		String InputId = scan.next();
 		for(int i = 0; i < memberList.length; i++) {
@@ -54,7 +57,32 @@ public class MemberService {
 		memberList[idx] = mem;
 		System.out.println("가입되었습니다.");
 	}
-	//아이디 중복확인 기능 메소드
-	
 	//로그인 기능 메소드
+	public void memberLogin() {
+		System.out.println("LOGIN");
+		//1. 로그인할 아이디, 비밀번호 입력
+		System.out.println("ID>>");
+		String InputId = scan.next();
+		System.out.println("Password>>");
+		String InputPw = scan.next();
+		//2. 입력한 값과 일치하는 회원정보 검색
+		int idx= -1;// for문 빠져나오면 -1
+			for(int i = 0; i<memberList.length; i++) {
+				if(memberList[i] != null) {
+					if((memberList[i].getMid()).equals(InputId) && (memberList[i].getMpw()).equals(InputPw)) {
+						idx = i;
+						break;
+					}
+				}
+			}
+			//3. 일치하는 회원이 있을 경우 " 아이디, 비밀번호, 이름" 출력
+			// 일치하는 회원이 없을 경우 " 아이디/비밀번호가 일치하지 않습니다." 출력
+			if(idx > -1) {
+				System.out.println("로그인 성공");
+				System.out.println("ID = "+memberList[idx].getMid() +"\nPW = " + memberList[idx].getMpw());
+			}
+			else {
+				System.out.println("로그인 실패");
+		}
+	}
 }

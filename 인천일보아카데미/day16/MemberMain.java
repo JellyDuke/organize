@@ -15,6 +15,8 @@ public class MemberMain {
 				memsvc.memberJoin();
 				break;
 			case 2: //로그인 기능 메소드 호출
+				memsvc.memberLogin();
+				
 				break;
 			default:
 				run = false;
