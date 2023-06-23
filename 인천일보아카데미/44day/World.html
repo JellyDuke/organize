@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World.html</title>
+    <!-- <link  rel="stylesheet" href="Hello.css"> -->
+    <style>
+        h1{
+            color : red;
+        }
+        </style>
+</head>
+<body>
+    <h1 id = "id01">World.html</h1> 
+    <button onclick="changeText()"> 글씨변경 </button>
+    <button onclick="clickBtn()"> 클릭 </button>
+</body>
+<script>
+    let text = '안녕하세요!';
+    function changeText(){
+        document.getElementById("id01").innerText = text; <!--document 탭이름 부분의 문서안의ID의 id01을 가져온다. 안에있는 텍스트를 text 변수로 바꿔준다.-->
+    }
+</script>
+</html>
