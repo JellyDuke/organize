@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>li태그</title>
+    <style>
+        ul{
+            list-style-type: square;
+        }
+        /* 1. 선택자(태그선택자, id선택자, class선택자) 
+        2. 속성: 값;*/
+        li{border: 1px solid black;
+            /* display:  block;  */
+            /* display: inline; */
+            display: inline-block; 
+            /* display: none;  */
+            /* list-style-type: none; */
+            /* float: left; */
+        }
+        li{
+            width: 80px;
+            /* height: 100px;  */
+            /* line-height: 100px; */
+            /* 높이 100px하고 라인 높이 100px 같아야 정렬이 올바름 */
+            text-align: center;
+            padding: 5px;
+        }
+        .fontRed{
+            color: red;
+        }
+        .font50{
+            font-size: 50px;
+        }
+        .mar{
+            margin: 50px;
+        }
+        /* span,a{ 
+            font-size: 10px;
+        }*/
+        /* ul{
+            text-align: right;
+            font-size: 10px;
+            font-weight: bold;
+        } */
+    </style>
+</head>
+<body>
+    <h4>ex04_li.html</h4>
+    <!-- ul, ol -->
+    <ul style="list-style-type: circle;">
+        <li>리스트1</li>
+        <li>리스트2</li>
+    </ul>
+    <ol type="I" start="3">
+        <li>리스트1</li>
+        <li>리스트2</li>
+    </ol>
+<hr>
+<!-- id,class -->
+    <ul>
+        <li>
+            <span class="fontRed font50">회원가입</span>
+        </li>
+        <li>
+            <span class="fontRed mar">로그인</span>
+        </li>
+        <li>
+            <a href="" class="fontRed">상품목록</a>
+            <!-- id는 하나의 값만 받을 수 있지만 class는 동시에 가질 수 있음 -->
+        </li>
+    </ul>
+
+</body>
+</html>

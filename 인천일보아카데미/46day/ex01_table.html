@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*1. 선택 2.속성 3.값*/
+      table,td,th {
+        border: 1px solid red;
+        /* border-collapse: collapse; */
+        /* collapse: 병합 */
+      }
+      
+      td {
+        padding: 10px;
+      }
+      /* td{border: 1px solid red;
+          border-collapse: collapse;} */
+    </style>
+  </head>
+
+  <body>
+    <h3>ex01_table.html</h3>
+    <table>
+      <!-- table rows -->
+      <tr>
+        <!-- table date -->
+        <td>3행 1열</td>
+        <td>3행 2열</td>
+        <td>3행 3열</td>
+        <td>3행 4열</td>
+      </tr>
+      <tr>
+        <td>1행 1열</td>
+        <td>1행 2열</td>
+        <td>1행 3열</td>
+      </tr>
+      <tr>
+        <!-- table date -->
+        <td>2행 1열</td>
+        <td>2행 2열</td>
+      </tr>
+
+    </table>
+    <hr />
+    <table>
+    <!-- 테이블 구조 태그 -->
+    <thead>
+        <tr>
+            <!-- th는 경계선이 없고 글씨가 두껍게 변함 -->
+            <caption>상품목록</caption>
+            <th>상품이름</th>
+            <th>상품가격</th>
+            <th>상품종류</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>키보드</td>
+            <td>20000원</td>
+            <td>주변기기</td>
+            
+        </tr>
+        <tr>
+            <td>마우스</td>
+            <td>15000원</td>
+            <td>주변기기</td>
+            
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                10
+            </td>
+        </tr>
+    </tfoot>
+</table>
+    <hr/>
+<table>
+    <!-- 병합 -->
+    <tr>
+        <td>1</td>
+        <!-- 옆으로 2칸을 병합을 하겠다. -->
+        <td colspan="3">2</td>
+    </tr>
+
+    <tr>
+        <td colspan="2">4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+
+    <tr>
+        <td colspan="3">7</td>
+    </tr>
+</table>
+<hr />
+<table>
+    <tr>
+        <!-- rowspan 아래로 병합 -->
+        <td rowspan="2">1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <!-- <td>4</td> -->
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+    <hr/>
+</body>
+</html>
