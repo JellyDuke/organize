@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form태그</title>
+    </head>
+
+    <body>
+        <h3>ex06_form.html</h3>
+
+        <h4>회원가입 페이지</h4>
+
+            <!-- action 데이터를 전송할 주소 -->
+            <!-- method 데이터를 전송할 방식 -->
+            <!-- method = "get", method = "post" -->
+            <form action="testPath" method="get">
+            <label for="inputId">아이디</label>
+            <input type="text" name="mid" id="inputId" required>
+            <br>
+            비밀번호 : <input type="text" name="mpw" required>
+            <br>
+            이메일 : <input type="email" name="memail">
+            <br>
+            <p>주소 선택</p>
+            <input type="radio" name="loc" value="seoul" id="locSeoul">
+            <label for="locSeoul">서울</label>
+
+            <input type="radio" name="loc" value="incheon" id="locIncheon" checked>
+            <label for="locIncheon">인천</label>
+            
+            <input type="radio" name="loc" value="busan" id="locBusan">
+            <label for="locBusan">부산</label>
+            <hr>
+            <p>관심분야</p>
+            <label>
+                <input type="checkbox" name="subjeck" value="JAVA" checked> 자바
+            </label>
+            <label>
+                <input type="checkbox" name="subjeck" value="ORACLE"> 오라클
+            </label>
+            <label>
+                <input type="checkbox" name="subjeck" value="HTML" checked> HTML
+            </label>
+
+            <hr>
+            <input type="submit" value="회원가입">
+
+            </form>
+        
+    </body>
+
+</html>

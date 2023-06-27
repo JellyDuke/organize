@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>input태그</title>
+    </head>
+
+    <body>
+        <h1>ex05_input태그.html</h1>
+        아이디 : <input type="text" name="mid" value="값 입력"
+                 placeholder="아이디를 입력해 주세요!">
+        <!-- <input type="text"/> (닫기 권장) -->
+        <!-- readonly : 읽기전용
+             disabled : 비활성화 -->
+
+             <!-- 날짜 입력 연-월-일 -->
+        <h4>type="date"</h4>
+        <input type="date">
+
+        <h4>type="number"</h4>
+        <input type="number" min="0" max="5" step="2">
+
+        <h4>type="radio"</h4>
+        <!-- name 속성의 값이 같은 그룹에서 1개만 선택 가능 -->
+        <input type="radio" name="loc" value="seoul"> 서울
+        <input type="radio" name="loc" value="incheon" checked> 인천
+        <input type="radio" name="loc" value="busan"> 부산
+        <!-- String loc = incheon -->
+        <!-- loc이라는 이름으로 incheon이 넘어감 -->
+
+        <h4>type="checkbox"</h4>
+        <input type="checkbox" name="subjeck" value="JAVA" checked> 자바
+        <input type="checkbox" name="subjeck" value="ORACLE"> 오라클
+        <input type="checkbox" name="subjeck" value="HTML" checked> HTML
+        <!-- JAVA와 ORACLE 선택 후 전송시 -->
+        <!-- name이 같으면 -->
+        <!-- String[] subject = { "JAVA", "ORACLE" } -->
+        <!-- name이 다르면 -->
+        <!-- String subject1 = "JAVA"
+             String subject2 = "ORACLE" -->
+        
+        <!-- <input type="color" name="colorVal">
+        <input type="email"> -->
+
+        <h4>type="file"</h4>
+        <input type="file" name="myProfile">
+
+        <h4>textarea 태그</h4>
+        <textarea name="" rows="5" cols="10"></textarea>
+
+        <input type="submit">
+
+    </body>
+
+</html>
