@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>style속성</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* 선택자 {속성 : 속성값;
+                       속성 : 속성값;
+            }
+            태그선택자(태그이름), id선택자(#id속성값), class선택자(.class속성값) */
+            h4{
+                color: crimson;
+            }
+            #id01{
+                border: 1px solid black;
+            }
+            .class01{
+                background-color: antiquewhite;
+            }
+            #div01{
+                background-color: greenyellow;
+                /* height : 요소의 높이 */
+                height: 50px;
+                /* width : 요소의 폭 */
+                width: 100px;
+                /* overflow: scroll; */
+            }
+            #div02{
+                background-color: chocolate;
+                min-height: 50px;
+                max-height: 200px;
+            }
+            span{
+                background-color: aqua;
+                height: 5000px; /* 늘어나지 않음 */
+                width: 1000px; /* 늘어나지 않음 */
+            }
+            #colorRed{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3>ex01_<span id="colorRed">style속성</span>.html</h3>
+        <h4>h4태그</h4>
+        <h5 id="id01">id="id01"</h5>
+        <h6 class="class01">class="class01"</h6>
+
+        <hr>
+
+        <div id="div01">div01</div>
+
+        <span>span태그span태그span태그span태그span태그span태그span태그span태그span태그span태그span태그span태그span태그</span>
+        <span>span태그</span>
+
+        <hr>
+
+        <div id="div02">div02</div>
+    </body>
+
+</html>

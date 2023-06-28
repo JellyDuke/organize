@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: 5px;
+        }
+        #wrap{
+            width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #header{
+            text-align: center;
+            padding: 20px;
+            font-size: 50px;
+            /* height: 200px; */
+            /* line-height: 200px; */
+        }
+        #navgation{
+            padding: 15px;
+            text-align: center;
+        }
+        #navgation>ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            /* flex 가로배치 */
+        }
+        #navgation>ul>li{
+            border: 1px solid black;
+            width: 120px;
+            padding: 10px;
+            text-align: center;
+        }
+        #navgation>ul>li:hover{
+            background-color: beige;
+        }
+        #content{
+            display: flex;
+        }
+        #leftContent{
+            width: 70%;
+        }
+        #rightContent{
+            width: 30%;
+            
+        }
+        #footer{
+            font-weight: bold;
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex06_page.html -->
+    <div id="wrap">
+        <div id="header">
+            <p>메인타이틀 - header</p>
+        </div>
+
+        <div id="navgation">
+            <p>메뉴리스트</p>
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+            </ul>
+        </div>
+
+        <div id ="content">
+            <div id="leftContent">
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+                <p>컨텐츠 영역-left</p>
+            </div>
+
+            <div id = "rightContent">
+                <p>컨텐츠 영역-right</p>
+            </div>
+        </div>
+
+        <div id ="footer">
+            <p>하단영역 - footer</p>
+        </div>
+    </div>
+</body>
+</html>
