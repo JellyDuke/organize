@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex03_js.html</h1>
+    <p id = "id01">1</p>
+    <h3 id="output"> </h3>
+    <hr>
+    <h4 id = "result"> 결과출력</h4>
+    <input type="text" id = "input01">
+    <button onclick="func01()">버튼</button>
+</body>
+<script>
+
+
+
+
+    function func01(){
+        let inputE1 = document.getElementById(input01);
+        console.log("inputE1.value" + inputE1.value)
+        let resultE1 = document.getElementById("result");
+        if(Number(inputE1.value) > 10){
+            resultE1.innerText = "10보다 크다";
+        }else{ 
+            resultE1.innerText = "10보다 작다.";
+        }
+    }
+
+
+
+    // document.getElementById("output").innerText
+    // document.getElementById("output").innerHTML
+
+
+
+    let number = document.getElementById("id01").innerText;
+    if(number > 5){
+        console.log("true이면 실행: "+ number);
+        document.getElementById("output").innerText = "true 이면 실행" + number;
+    }else{ 
+        console.log("false이면 실행" + number);
+        document.getElementById("output").innerHTML ="<a href= ' '>" + number + "</a>";
+        // document.getElementById("output").innerText ="false이면 실행" + number;
+    }
+
+
+
+
+    let caseVal = "A";
+    switch(caseVal){
+        case "A":
+            console.log("A")
+            break;
+        case true:
+            consol.log(true)
+            break;
+    }
+    for(let i = 0; i < 10; i++ ){
+        console.log(i)
+    }
+    let whileVal = 5;
+    while(whileVal > 0){
+        console.log(whileVal);
+        whileVal --;
+    }
+
+
+</script>
+</html>

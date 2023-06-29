@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+        th,td{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex05_scores.html</h1>
+    <table>
+        <tr>
+            <th colspan="2">성적 계산기</th>
+        </tr>
+        <tr>
+            <th>점수입력</th>
+            <td><input type="text" id="inputScore"></td>
+        </tr>
+        <tr>
+            <th>결과</th>
+            <td id="result"> </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+            <button onclick="addscore()">입력</button>
+            <button onclick="printScore()">출력</button>
+            <button onclick="sumScore()">총점</button>
+            <button onclick="avgScore()">평균</button>
+            </th>
+        </tr>
+    </table>
+</body>
+<script>
+    let resultE1 = document.getElementById("result");
+    let scoreList = []; //성적 저장
+    let inputE1 = document.getElementById("inputScore");
+        function addscore(){
+        console.log("입력처리 전: " + scoreList.length);
+        //id = "inputscore"인 input 태으기 값 콘솔 출력
+        let score = document.getElementById("inputScore").value;
+        // score.length, score == ""
+        // console.log(score);
+        let scoreNum = Number(score);
+        console.log(isNaN(scoreNum));
+        console.log(scoreNum); //NaN
+        if(isNaN(scoreNum)){
+            //입력한 성적이 숫자가 아닐 경우
+            // alert("점수를 다시 입력 해주세요!")
+            document.getElementById("result").innerText = "성적을 숫자로 입력하세요!";
+        }else if (score == ""){
+            document.getElementById("result").innerText = "성적을 입력해주세요!!";
+        }else{
+            if(scoreNum >= 0 && scoreNum <=100){
+                scoreList.push(scoreNum); //scoreList에 추가
+                resultE1.innerText = "성적이 입력 되었습니다.";
+                //점수 입력 태그 조기화
+                document.getElementById("inputScore").value= "";
+            }else{
+                resultE1.innerText = "100이하의 성적을 입력 하세요!";
+            }
+        }
+        //scoreNum >= 0 && scoreNum <=100
+        // document.getElementById("inputScore").focus();
+        inputE1.focus();
+        console.log("입력처리 후 : " + scoreList.length);
+    }
+
+    function printScore(){
+        if(scoreList.length == 0){
+            resultE1.innerText = "성적이 입력되지 않았습니다!";
+            inputE1.focus();
+        }else{
+            let output = "";
+            for(let i = 0; i < scoreList.length; i++){
+                output += "["+scoreList[i]+ "] ";
+            }
+            resultE1.innerText = output;
+        }
+    }
+    function sumScore(){
+        let sum = 0;
+        if(scoreList.length == 0){
+            resultE1.innerText = "성적이 입력되지 않았습니다!";
+            inputE1.focus();
+        }else{
+        for(let i = 0; i<scoreList.length; i ++){
+            sum += scoreList[i];
+            }
+        }
+        inputE1.focus();
+        resultE1.innerText = sum;
+    }
+    function avgScore(){
+        let avg = 0;
+        if(scoreList.length == 0){
+            resultE1.innerText = "성적이 입력되지 않았습니다!";
+            inputE1.focus();
+        }else{
+        for(let i = 0; i<scoreList.length; i ++){
+            avg += scoreList[i];
+        }
+    }
+        avg = (avg/scoreList.length);
+        resultE1.innerText = avg;
+        resultE1.style.color="green";
+        inputE1.focus();
+}
+</script>
+</html>

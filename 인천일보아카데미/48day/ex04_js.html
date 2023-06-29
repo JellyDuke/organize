@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex04_Array.html</h1>
+</body>
+<script>
+    //array
+    let myProfile = [];
+    myProfile[0] = "밥줘";
+    myProfile[1] = "010-4335-4586"
+    myProfile[2] = 38;
+    myProfile[3] =true;
+    console.log(myProfile[0]);
+    console.log(myProfile[1]);
+    console.log(myProfile.length);
+
+    myProfile['email'] = "wnghqkr30520@naver.com";
+    console.log(myProfile['email']);    
+    
+    let arr01 = ['icia', true, 100];
+    console.log(arr01[0]);
+    
+    let scores = [];
+    scores.push(30); //인덱스 값 밀어 넣기
+    scores.push(20);
+    scores.push(10);
+    console.log(scores.length);
+    console.log(scores[0]);
+    console.log(scores[1]);
+
+    let sc = scores.pop();//마지막 인덱스 값 추출
+    console.log("sc : " + sc)
+    console.log(scores.length)
+
+    scores.sort(); //오름 차순 정렬
+    console.log(scores[0]);
+    console.log(scores[1]);
+    scores.reverse();
+    scores.shift(); //첫번째 인덱스 값 추출
+</script>
+</html>

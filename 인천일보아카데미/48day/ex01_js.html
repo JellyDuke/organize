@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id01">ex01_js.html</h1>
+</body>
+    <script>
+        //변수 var, let, const
+        // var number = 1;
+        // number = 100;
+
+        // let letval = 'abc';
+        // letVal = 'ABC1234';
+
+        // const constval = true;
+        // constVal =  false;
+        var a = '문자';
+        var b = 1234;
+        var c = true;
+        var d = document.getElementById("id01")
+        console.log('콘솔 출력' + d);
+        
+        var varVal = 10;
+        console.log("varVal " + varVal)
+
+        let letVal = 200;
+        if(letVal>100){
+            console.log("letVal" + letVal)
+            let ifVal = 1000;
+            var ifVarlVal = 2000;
+        }
+        console.log("letVal : " + letVal);
+        // console.log("ifVal : " + ifVal);
+        console.log("ifVarVal : " + ifVarlVal);
+
+        const constVal = 10;
+        //constVal = 100;
+        var a = 100;
+        var a = 1000;
+
+        let letval1 = 10;
+        // let letval1 = 100;
+        letval1 = '문자';
+        letval1 = true;
+        letVal1 = document.getElementById("id01");
+        letVal1.innerText = "안녕하세요!";
+        
+        let un;
+        console.log(un);
+
+        function funcName(){
+            console.log("funcName() 호출")
+            return 100;
+        }
+        funcName();
+    </script>
+    <script>
+        let ac = funcName();
+        console.log(ac);
+    </script>
+</html>
