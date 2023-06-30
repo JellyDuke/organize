@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid magenta;
+            padding: 10px;
+        }
+        .d-none{
+            display: none;
+        }
+        .clickMenu{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>ex02_shoqHide.html</h2>
+
+    <button id="btn01" onclick="menuClick(this,'div01')" class="menuBtn clickMenu">메뉴1</button>
+    <button id="btn02" onclick="menuClick(this,'div02')" class="menuBtn">메뉴2</button>
+    <button id="btn03" onclick="menuClick(this,'div03')" class="menuBtn">메뉴3</button>
+    <button id="btn04" onclick="menuClick(this,'div04')" class="menuBtn">메뉴4</button>
+    
+    <hr>
+
+    <div id="div01" class="contentDiv">내용1</div>
+    <div id="div02" class="contentDiv d-none">내용2</div>
+    <div id="div03" class="contentDiv d-none">내용3</div>
+    <div id="div04" class="contentDiv d-none">내용4</div>
+
+</body>
+<script>
+    function menuClick(menuObj,objId){
+        let btnList = document.getElementsByClassName("menuBtn");
+        console.log(btnList.length);
+        // console.log(btnList[0]);
+        // for(let i = 0; i < btnList.length; i++){
+        //     btnList[i].classList.remove("clickMenu");
+        // }
+        for(let btnObj of btnList){
+            btnObj.classList.remove("clickMenu");
+            console.log(btnObj);
+        }
+        // document.getElementById("btn01").classList.remove("clickMenu");
+        // document.getElementById("btn02").classList.remove("clickMenu");
+        // document.getElementById("btn03").classList.remove("clickMenu");
+        // document.getElementById("btn04").classList.remove("clickMenu");
+
+        menuObj.classList.add("clickMenu");
+        
+        let divList = document.getElementsByClassName("contentDiv");
+        for(let divObj of divList){
+            divObj.classList.add("d-none")
+        }
+        document.getElementById(objId).classList.remove("d-none");
+    }
+    
+</script>
+</html>

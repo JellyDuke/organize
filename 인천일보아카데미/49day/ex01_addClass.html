@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgColor{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h2 onclick="changeColor(this)">ex01_addClass.html</h2>
+    <p onclick="changeColor(this)">p태그입니다.</p>
+    <div onclick="changeColor(this)">div입니다.</div>
+
+    <hr>
+
+    <h2 onclick="addClass(this)">h2태그입니다.</h2>
+    <p onclick="addClass(this)">p태그입니다.</p>
+    <div onclick="addClass(this)">div입니다.</div>
+
+    <hr>
+    <h2 onclick="toggleClass(this)">h2태그입니다.</h2>
+
+
+
+    </body>
+<script>
+    function toggleClass(obj){
+        //toggle("클래스값") 해당 클래스가 있으면 제거, 없으면 추가
+        obj.classList.toggle("bgColor");
+    }
+    function addClass(obj){
+        // console.log(obj);
+        let objClassList = obj.classList;
+
+        // console.log(objClassList.length);
+        //contains(클래스값) 해당 클래스가 있으면 true, 없으면 false
+        let checkClass = objClassList.contains("bgColor");
+        console.log(checkClass);
+        
+        //add()클래스 값 추가
+        objClassList.add("bgColor");
+
+        if(checkClass){
+            //클래스 값을 제거
+            objClassList.remove("bgColor");
+        }else{
+            //add("클래스값") 클래스 값 추가
+            objClassList.add("bgColor");
+        }
+
+        }
+
+    function changeColor(clickObj){
+        // console.log(clickObj);
+        // clickObj.innerText="클릭!";
+        let nowColor = clickObj.style.color;
+        console.log("현재 글자 색: " + nowColor);
+        if(nowColor == ""){
+        clickObj.style.color = "red";
+    } else{
+        clickObj.style.color = "";
+    }
+    }
+</script>
+</html>

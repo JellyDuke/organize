@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+        }
+        #idCheckMsg{
+            margin: 0px;
+            font-size: 11px;
+            /* padding-left: 5px; */
+        }
+    </style>
+</head>
+<body>
+    <h2>ex03_joinForm.html</h2>
+        <form action="testUrl" onsubmit="return joinFormCheck(this)">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="mid" id="inputMid" onkeyup="idLength(this)" placeholder="아이디는 5~8자리">
+                <button type="button" onclick ="idCheck()">중복확인</button>
+                <p id="idCheckMsg">아이디 확인 메시지 출력</p>
+            </td>
+        </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="text" name = "mpw"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="text" name="memailId">@
+                    <input type="text" name="memailDomain" id="inputDomain">
+                    <select onchange="domainSelect(this)">
+                    <option value="">직접입력</option>
+                    <option value="naver.com">네이버</option>
+                    </select>
+                </td>
+            </tr>
+            <th colspan="2">
+                <input type="submit" value="회원가입">
+                </th>
+        </table>
+    </form>
+</body>
+    <script>
+        let idmsg = document.getElementById("idCheckMsg");
+        let formMidCheck = false; //treu:submit, false: submit 중지
+        let idLthCheck = false; //길이체크
+        let iddupCheck = false;//중복체크
+        function idLength(inputObj){
+            let idVal = inputObj.value;
+            if(idVal.length == 0){
+                formMidCheck = false;
+                console.log("아이디를 입력 해주세요!");
+                idmsg.innerText ="아이디를 입력 해주세요!";
+                idmsg.style.color='red';
+                //글씨색 red 
+            }else if(idVal.length < 5 || idVal.length > 8){
+                formMidCheck = false;
+                console.log("아이디는 5~8자리 입니다.")
+                idmsg.innerText = "아이디는 5~8자리 입니다."
+                idmsg.style.color="red";
+                //글씨색 red
+            }else{
+                console.log("사용 가능한 아이디 입니다.")
+                idmsg.style.color="green";
+                //글씨색 green
+            }
+        }
+        function idCheck(){
+            const mid = 'abcd';
+            let inputMid = document.getElementById("inputMid").value;
+            if(inputMid.length<5 || inputMid.length > 8){
+                idmsg.innerText = "아이디는 5~8자리 입니다.";
+                idmsg.style.color = "red";
+                return;
+            }
+            if(mid==inputMid){
+                idmsg.innerText="중복된 아이디 입니다.";
+                idmsg.style.color="red";
+            }else{
+                idmsg.innerText ="사용 가능한 아이디 입니다.";
+                idmsg.style.color = "green";
+                iddupCheck = true;
+            }
+        }
+        function domainSelect(selObj){
+            document.getElementById("inputDomain").value = selObj.value;
+            }
+        function joinFormCheck(formObj){
+            console.log("joinFormCheck()호출");
+            console.log(formObj.mid.value);
+            console.log(formObj.mpw.value);
+            //아이디 입력창 체크
+            if(!formMidCheck){
+                alert("올바른 아이디를 입력하세요!");
+                formObj.mid.focus();
+                return false;
+            }
+            // //비밀번호 체크
+            if(formObj.mpw.value == ""){
+                alert("비밀번호를 입력 해주세요!");
+                formObj.mpw.focus();
+                return false;
+            }
+            //memailId, memailDomain
+            if(formObj.memailId.value == "" || formObj.memailDomain.value == ""){
+                alert("이메일을 입력하세요!")
+                formObj.memailId.focus();
+                return false;
+            }
+            if(!idLength){
+                alert ("아이디 길이를 체크 해주세요!");
+                formObj.mid.focus();
+                return false;
+            }
+            if(!iddupCheck){
+                alert ("아이디를 중복체크 해주세요!");
+                formObj.mid.focus();
+                return false;
+            }
+            // if(formObj.memailDomain.value == ""){
+            //     alert("이메일 도메인을 입력하세요!!")
+            //     formObj.memailId.focus();
+            //     return false;
+            // }
+            
+            // return false를 주면 onsubmit이 동작을 안함.
+        }
+    </script>
+</html>

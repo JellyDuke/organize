@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            table, th, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td{
+                padding: 10px;
+            }
+            #idCheckMsg{
+                margin: 0;
+                font-size: 15px;
+                /* padding-left: 5px; */
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>ex03_joinForm.html</h2>
+        <!-- onsubmit = true/false -->
+        <!-- true면 submit 가능 false면 submit 불가 -->
+        <form action="testUrl" onsubmit="return joinFormCheck(this)">
+            <table>
+                <tr>
+                    <th colspan="2" style="padding: 20px 0;">회원가입</th>
+                </tr>
+
+                <tr>
+                    <th>아이디</th> <!-- name은 서버에 전송할 때 사용하는 변수명 -->
+                    <td><input type="text" name="mid" id="inputMid" onkeyup="idLength(this)" placeholder="아이디는 5~8자리">
+                        <button id="btable" type="button" onclick="idCheck()" disabled>중복확인</button>
+                        <p id="idCheckMsg"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input type="password" name="mpw"></td>
+                </tr>
+
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text" name="memailId"> @
+                        <input id="inputDomain" name="memailDomain" type="text" style="width: 100px;">
+                        <select onchange="domainSelect(this)">
+                            <option value="">직접입력</option>
+                            <option value="naver.com">네이버</option>
+                            <option value="daum.net">다음</option>
+                            <option value="google.com">구글</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="회원가입">
+                    </th>
+                </tr>
+
+            </table>
+        </form>
+    </body>
+
+    <script>
+        let idMsgEl = document.getElementById("idCheckMsg");
+        let formMidCheck = false; // 아이디 중복 체크 true:submit 가능, false:submit 중지
+
+        function idLength(inputObj){
+            let idVal = inputObj.value
+            if(idVal.length == 0) {
+                idMsgEl.innerText = "아이디를 입력해 주세요!";
+                idMsgEl.style.color = "red";
+                // formMidCheck = false;
+                document.getElementById("btable").disabled = true;
+            }
+            else if(idVal.length < 5 || idVal.length > 8) {
+                idMsgEl.innerText = "아이디는 5~8자리입니다.";
+                idMsgEl.style.color = "red";
+                // formMidCheck = false;
+                document.getElementById("btable").disabled = true;
+            }
+            else {
+                idMsgEl.innerText = "사용 가능한 아이디입니다.";
+                idMsgEl.style.color = "green";
+                // formMidCheck = true;
+                document.getElementById("btable").disabled = false;
+            }
+
+        }
+        
+        function idCheck(){
+            const mid = 'abcdef';
+            let inputMid = document.getElementById("inputMid").value;
+
+            if(mid == inputMid) {
+                idMsgEl.innerText = "중복된 아이디입니다.";
+                alert("중복된 아이디입니다.");
+                idMsgEl.style.color = "red"
+                formMidCheck = false;
+            }
+            else {
+                idMsgEl.innerText = "사용 가능한 아이디입니다."
+                alert("사용 가능한 아이디입니다.");
+                idMsgEl.style.color = "green"
+                formMidCheck = true;
+            }
+        }
+
+        function domainSelect(selObj){
+            document.getElementById("inputDomain").value = selObj.value;
+        }
+
+        function joinFormCheck(formObj) {
+            console.log("joinFormCheck() 호출");
+            // console.log(formObj.mid.value);
+            // console.log(formObj.mpw.value);
+            // return false;
+
+            // 아이디 체크
+            if(formMidCheck == false){
+                alert("아이디 중복 체크를 해 주세요!");
+                formObj.inputMid.focus();
+                return false;
+            }
+            // 비밀번호 체크
+            if(formObj.mpw.value == ""){
+                alert("비밀번호를 입력해 주세요!");
+                formObj.mpw.focus();
+                return false;
+            }
+            // 이메일 체크
+            if(formObj.memailId.value.length == 0){
+                alert("이메일을 입력해 주세요!");
+                formObj.memailId.focus();
+                return false;
+            }
+            // 도메인 체크
+            if(formObj.memailDomain.value.length == 0){
+                alert("이메일 도메인을 입력해 주세요!");
+                formObj.memailDomain.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</html>
