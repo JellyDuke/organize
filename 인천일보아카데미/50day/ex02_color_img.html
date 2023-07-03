@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+< lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contents{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #colorBox, #imgBox{
+            width: 200px;
+            height: 200px;
+        }
+        #colorBox{
+            background-color:;
+        }
+    </style>
+</head>
+<body>
+    <h1>color_imgChange.html</h1>
+    <div class="contents">   
+        <input type="color" onchange="colorChange(this)">
+        <div id ="colorBox">
+        </div>
+    </div> 
+        <hr>
+    <div class="contents">
+        <button onclick="imgChange(0)">이전</button> <button onclick="imgChange(1)">다음</button>
+        <div id="imgBox">
+            <img src="1.png" id="img01" height="100%" alt="">
+        </div>
+    </div>
+
+</body>
+    <script>
+        function colorChange(inputObj){
+            console.log(inputObj.value);
+            let boxObj = document.getElementById("colorBox");
+            boxObj.style.backgroundColor = inputObj.value;
+            
+            let boxObj2 = inputObj.nextElementSibling;
+            boxObj2.style.backgroundColor = inputObj.value;
+        }
+        let idx = 0;
+        let imgList = ["1.png", "2.png", "3.jpg"];
+        function imgChange(selVal){
+            console.log(selVal);
+            if(selVal){
+                idx++;
+                console.log("다음");
+                if(idx >= imgList.length){
+                    idx = 0;
+                }
+            }else{
+                idx--;
+                console.log("이전");
+                if(idx < 0){
+                    idx = imgList.length -1;
+                }
+            }
+            let imgItem = imgList[idx];
+            document.getElementById("img01").setAttribute("src",imgItem);
+            
+        }
+    </script>
+</html>
