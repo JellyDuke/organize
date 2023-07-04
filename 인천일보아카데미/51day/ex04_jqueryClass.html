@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .bgRed{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex04_jqueryClass.html</h1>
+    <h1>ex04_jqueryClass.html</h1>
+    <h1>ex04_jqueryClass.html</h1>
+    <button id="btn01"> 클릭01!</button>
+    <button id="btn02"> 클릭02!</button>
+    
+    <button id="btn03"> 클릭03!</button>
+
+    <div>
+        <input type="text" value="input01">
+    </div>
+        <!-- value => 내용 -->
+    <div>
+        <!-- focus 클릭이 되었을때 일어나는 이벤트, 
+        blur는 focus 클릭의 이벤트를 벗어났을때 나타나는 이벤트 -->
+        
+        <input type="text" value="input02">
+    </div>
+    <div>
+        <input type="text" value="input03">
+    </div>
+</body>
+
+<script>
+    // # <- id를 의미함 css style jquery에서는 #을사용
+    $("#btn03").click(function(){
+        //id btn03을 선택 click 했을때
+        //  실행할 명령어 작성을 위한 function 구문 사용
+        alert("버튼 03 클릭!");
+        })
+    $("input").focus(function(a){
+        //input 모든 태그에 focus 이벤트를 사용
+        // console.log("포커스!!");
+        // a.target.value = "CLICK03!!";
+        //jquery 문법이 아님
+        //매개변수 a 사용 함수에 일어나는 것들을 a에 담겨짐.
+        //value는 focus 내용 삽입이다. innertext는 버튼 혹은 글자 바꾸기에 사용.
+
+
+        //jquery문법을 사용했으면 jquery로 해야함 중간에 script 문법으로는 안됨
+
+
+        //$(선택자).val(); -get 값을 가져오겠다.
+        //$(선택자).val("값"); -set 값을 저장하겠다.
+        $(a.target).val("포커스!!");
+        //a.target으로 요소를 선택하겠다.
+        //  해당 태그 요소에 val 내용을 포커스!!로 넣는다.
+        let inputVal = $(a.target).val();
+        //jquery 문법 a.target요소 내용을 inputVal에 저장 
+        // 현재 저장된 내용("포커스!!")
+        console.log(inputVal);
+        // 저장되어있는 요소 inputVal을 console.log에 불러옴
+
+        $(a.target).parent().addClass("bgRed");
+        //현재 이벤트가 일어난 요소를 선택의 parent 부모요소를 선택.
+        //선택된 요소 즉 부모 태그에 addClass Class를 bgRed로 줌.
+    })
+    $("input").blur(function(e){
+        $(e.target).parent().removeClass("bgRed");
+        //선택된 요소의 부모요소를 선택, 클래스를 지움 bgRed
+    })
+</script>
+
+<script>
+    let btn01El = document.getElementById("btn01");
+    //변수 btn01에 문서의 btn01의 id를 가져와 btn01에 저장한다.
+    btn01El.addEventListener('click', function(){
+        alert("버튼1 클릭!")
+        //변수 btn01El에 이벤트 리스너를 추가 이벤트명 click 클릭됐을때 사용되는
+        // 이벤트 다음 무기명함수 function을 사용
+        btn01El.innerText = "CLICK!!";
+        //id속성을 가지고 있는 btn01을 클릭했을때 버튼의 텍스트가 클릭01!에서 CLICK!!으로 바뀐다.
+    });
+    document.getElementById("btn02").addEventListener('click',function(e){
+        //문서의 id btn02를 가져온다. btn02에 이벤트를 추가한다. click이벤트를 무기명함수를 추가해 클릭했을때 나올 이벤트를 무기명함수 function 안에 추가한다. function(매개변수 e를 사용 )
+
+        alert("버튼02 클릭!");
+        //e.targer = ID(btn02) 이벤트가 실행된 Element정보를 담음
+        e.target.innerText = "CLICK02!!";
+
+        //이벤트가 실행된 Element에 텍스트를 CLICK02!!로 바꿈 Element = 요소
+    });
+</script>
+
+<script>
+    //class 속성 부여 addClass("값"); h1에 bgRed라는 클래스를 부여. 인덱스 eq(0)번째 선택.
+    // $("h1").eq(0).addClass("bgRed");
+    $("h1").addClass("bgRed");
+    //eq(0) -> 인덱스 번호 0,1,2... 
+
+    //class 값 제거 removeClass("값")
+    $("h1").eq(0).removeClass("bgRed");
+    //h1태그의 인덱스 0번째 클래스의 bgRed를 지우겠다.
+    
+    // class 값 부여 또는 제거 toggle toggleClass("값")
+    $("h1").toggleClass("bgRed");
+    
+    let h1List = document.getElementsByTagName("h1");
+    let h1List2 = document.querySelectorAll("h1");
+    // h1List에 문서의 태그 이름의 h1을 저장한다.
+    console.log(h1List)
+    for( let h1el of h1List){
+       // h1el.classList.add();
+       // h1el.classList.remove();
+    }
+</script>
+</html>

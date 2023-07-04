@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c85d2a3051.js" crossorigin="anonymous"></script>
+    <style>
+        #formWrap{
+            border: 2px solid salmon;
+            width: 500px;
+            margin: 100px auto;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        input[type='submit']{
+            border: 3px solid salmon;
+            border-radius: 15px;
+            background-color: white;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 5px;
+            font-size: 20px;
+        }
+        input[type = 'submit']:hover{
+            background-color: salmon;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        input[type='text']{
+            
+        /* input태그 text만 지정하여 선택 */
+            border: none; 
+            /* 글 경계선 지우기 */
+            outline: none;
+             /* 포커스가 맞쳤을때 나오기 */
+            width: 100%;
+            box-sizing: border-box;
+            height: 30px;
+        }
+        .formInput{
+            border: 3px solid gainsboro;
+            border-radius: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+        }
+        .fomInput>input{
+            /* formInput을 갖고 있는 태그를 선택 */
+        }
+        .inputFocus{
+            border-color: green;    
+        }
+        .inputError{
+            border-color: red;
+        }
+        .checkMsg{
+            margin-left: 5px;
+            margin-top : 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: red;
+        }
+        .formIcon{
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 15px;
+        }
+        .d-none{
+            display: none;
+        }
+        </style>
+</head>
+<body>
+    <h1>ex01_loginForm.html</h1>
+    <div id = "formWrap">
+        <form action="login" method="get" onsubmit="return loginFormCheck(this)">
+            <div class="formInput ">
+            <span class ="formIcon"><i class="fa-solid fa-user"></i></span>
+                <input type="text" name="loginId" class="userInput" placeholder="아이디">
+            </div>
+            <p class = "checkMsg d-none" >아이디를 입력하세요!</p>
+
+            <div class="formInput ">
+                <span class ="formIcon"><i class="fa-solid fa-lock"></i></span>
+                <input type="text" name="loginPw" class="userInput" placeholder="비밀번호">
+            </div>
+            <p class = "checkMsg d-none">비밀번호를 입력하세요!</p>
+                <input type="submit" value="로그인">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div id="mainContents">
+        <div class = "divSub">
+            sub1
+        </div>
+        <div class = "divSub">
+            sub2    
+        </div>
+        <div class = "divSub">
+            sub3
+        </div>
+    </div>
+</body>
+
+<script>
+    let mainDivEl = document.querySelector("#mainContents");
+    console.log(mainDivEl);
+    let childEls = mainDivEl.children;
+    console.log(childEls[0]);
+    let firstChildEl = mainDivEl.firstElementChild;
+
+    let lastChildEl = mainDivEl.lastElementChild;
+
+    let subDivEl = document.querySelectorAll(".divSub");
+    console.log(subDivEl.length);
+    console.log(subDivEl[0]);
+</script>
+
+<script>
+    // <div class = "form Input">
+    // <input type = "text" onfocus = "focusInput(this)" 
+        // onblur= "blurInput(this)" placeholder = "아이디">
+
+
+    // 요소.addEventListener(이벤트명, 실행함수);
+    // <input type="text" class="userInput" placeholder="아이디">
+    // <input type="text" class="userInput" placeholder="비밀번호">
+    let inputTagElements = document.getElementsByClassName("userInput");
+    let inputLine = document.getElementsByClassName("chekMsg")
+    for(let inputEl of inputTagElements){
+        console.log(inputEl);
+        // 무기명 함수 이름없이 바로 실행되는 함수 function(){}
+        inputEl.addEventListener('focus' , function(){
+            inputEl.parentElement.classList.remove("inputError");
+            inputEl.parentElement.classList.add("inputFocus");
+        });
+        inputEl.addEventListener('blur', function(){
+            //input 태그에 입력된 value가 없으면 .inputError추가
+            if(inputEl.value == ""){
+                inputEl.parentElement.classList.add("inputError");
+                inputEl.parentElement.nextElementSibling.classList.remove("d-none");
+                // inputEl.parentElement.nextElementSibling.style="display: grid";
+            }
+            else {
+                inputEl.parentElement.classList.remove("inputFocus")
+                inputEl.parentElement.nextElementSibling.classList.add("d-none");
+                // inputEl.parentElement.nextElementSibling.style="display: none";
+
+            }
+        })
+    }
+function focusInput(obj){
+    console.log("focusInput 호출");
+    // console.log(obj.parentElemet);
+    obj.parentElement.classList.add("inputFocus");
+}
+function blurInput(obj){
+    console.log("blurInput 호출")
+    obj.parentElement.classList.remove("inputFocus");
+
+}
+function loginFormCheck(formObj){
+    let idEl = formObj.loginId; //아이디 input 태그
+    let pwEl = formObj.loginPw; //비밀번호 input 태그
+    if(idEl.value == "" ){
+        alert("아이디를 입력해주세요!");
+        idEl.focus();
+        return false;
+    }
+    if(pwEl.value==""){
+        alert("비밀번호를 입력해주세요!");
+        pwEl.focus();
+        return false;
+    }
+}
+</script>
+</html>

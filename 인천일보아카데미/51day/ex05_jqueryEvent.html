@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .bgRed{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex05_jqeryEvent</h1>
+    <div>
+        <input type="text" value="input01">
+    </div>
+    <p>1</p>
+    <div>
+        <input type="text" value="input02">
+    </div>
+    <p>2</p>
+    <div>
+        <input type="text" value="input03">
+    </div>
+    <p>3</p>
+</body>
+<script>
+    // $("input").on( "focus" , function( e ){
+    //     // 태그 input의 이벤트 foucus 사용
+    //     $(e.target).parent().addClass("bgRed");
+    // })
+    // $("input").on( "blur" , function( e ){
+    //     // 태그 input의 이벤트 blur 사용
+    //     $(e.target).parent().removeClass("bgRed");
+    // })
+
+
+    // on등록 메소드 이벤트 input태그의 focus -> key, function -> value
+    $("input").on({ "focus" : function(e){ $(e.target).parent().addClass("bgRed");
+                    // $(e.target).parent() == <div>를 선택된것.  다음에 있는 요소는 <p>
+                    $(e.targer).parent().next().addClass("bgRed");
+                    // $(e.target).parent().prev().addClass("bgRed");
+    },
+                    "blur" : function(e){$(e.target).parent().removeClass("bgRed");
+                    $(e.targer).parent().next().removeClass("bgRed");
+                    // $(e.target).parent().prev().removeClass("bgRed");
+    }}) 
+</script>
+</html>

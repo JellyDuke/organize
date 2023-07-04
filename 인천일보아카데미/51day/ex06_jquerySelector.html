@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+    
+            border: 1px solid black;
+            padding: 20px;
+        }
+    
+        div>h1{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex06_jquerySelector.html</h1>
+    
+    <div>
+
+    </div>
+    <button id="btn01">버튼01</button>
+    <div>
+
+    </div>
+    <div style="width: 100%;" id = "div01">
+        <h1>
+            div>h1<span style="color: red;"> 태그 </span> 입니다.
+        </h1>
+        <h1>
+            div>h1<span style="color: red;"> 태그 </span> 입니다.
+        </h1>
+        <h1>
+            div>h1<span style="color: red;"> 태그 </span> 입니다.
+        </h1>
+        <p><h1>div>div>h1</h1></p>
+        
+        </div>
+    </div>
+</body>
+<script>
+    $("#btn01").click(function(e){
+        //btn01 id 요소의 click 이벤트가 되면 이벤트 대상 매개변수 e function
+        $(e.target).prev().css("background-color", "blue");
+        //선택되는 요소의 태그의 이전 태그 의 css 스타일 배경색을 파랑색으로 하겠다.
+    });
+    $("#btn01").dblclick(function(e){
+        //btn01 id 요소의 더블클릭의 dbclick이벤트가 되면 이벤트 대상 매개변수 e function
+        $(e.target).next().css("background-color", "red");
+        //선택되는 요소의 태그의 다음 태그 의 css 스타일 배경색을 파랑색으로 하겠다.
+    });
+
+    $("span").click(function(e){
+        $(e.target).parent().css("border","3px solid blue");
+        //span 태그의 click을 했을때 function의 함수 실행
+        //요소의 부모태그 스타일을 border 3px solid blue를 준다.
+    });
+
+    $("#div01").click(function(e){
+        //div01 아이디를 가지고 있는 해당 태그를 클릭했을때 실행되는 함수
+        $(e.target).children().css("border","3px solid red");
+        //클릭이된요소의 자식요소들의 스타일 border 3px solid red를 준다. span 태그는 아니다. div의 h태그만 의미함.
+    });
+    $("div>h1").text("h1 태그 선택!!")
+    //div안에 있는 h1 태그에만 text를 h1 태그 선택!!으로 바뀜
+
+</script>
+</html>

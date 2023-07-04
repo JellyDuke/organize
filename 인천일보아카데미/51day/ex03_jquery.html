@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>ex03_jquery.html</h2>
+    <div id="div01">div01</div>
+    <d2iv id="div02">div02</d2iv>
+
+    <img id="img01" src = "../day07/1.png" alt = "" width="100px">
+</body>
+
+<script>
+    //속성 선택 적용
+    //id 속성값이 "img01"인 요소를 선택하고 선택된 요소의 src 속성값 확인
+    let imgsrc = $("#img01").attr("src");
+    console.log("imgsrc : " + imgsrc);
+    //imgsrc : ../day07/img1.jpg
+    //선택된 요소의 src 속성의 값을 "../day07/img2.jpg"으로 set
+    $("#img01").attr("src","../day07/2.png");
+    </script>
+<script>
+    $(document).ready(function(){
+        //실행코드
+    });
+    $(function(){
+        // 실행코드sss
+    });
+    // body 영역의 문서객체를 준비
+    //jquery - style 적용
+    // id = "div01"에 배경색 설정
+    // document.getElementById("div01")
+    document.querySelector("#div01").style.backgroundColor = "red";
+
+    // $("#div02").css("스타일속성","값");
+    // $("#div02").css("background-color", "blue");
+    // $("#div02").css("color", "white");
+    // $("#div02").css("background-color", "blue").css("color", "white");
+    let bgColor = $("#div02").css("background-color");
+    console.log("적용전 bgColor : " + bgColor);
+
+    $("#div02").css({"background-color":  "blue", "color": "white"});
+
+    bgColor = $("#div02").css("background-color");
+    console.log("적용 후 bgColor: " + bgColor);
+</script>
+</html>
