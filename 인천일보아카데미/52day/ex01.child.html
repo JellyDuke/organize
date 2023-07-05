@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex01_child.html</h1>
+    <button onclick="sendMsg()">버튼1</button>
+</body>
+<script>
+    function sendMsg(){
+        let msg = prompt("메시지를 입력해주세요!");
+        window.opener.document.getElementById("msg").innerText = msg;
+        //window의 오프너 열린 문서의 msg id가지고 있는 태그를 선택
+        // innertext 선택한 태그의 let msg = prompt("메시지를 입력해주세요!") 프롬프트의 입력값을 가짐.
+    }
+</script>
+</html>

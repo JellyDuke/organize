@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex01.html</h1>
+    <button onclick="alertClick()">alert 버튼</button>
+    <button onclick="confirmClick()">confirm버튼</button>
+    <button onclick="promptClick()">prompt버튼</button>
+    <button onclick="openClick()">open버튼</button>
+    <p id ="msg">메시지 출력</p>
+    
+</body>
+<script>
+    function openClick(){
+        // window.open("URL","새창이름","옵션");
+        window.open("http://192.168.0.147:5500/day09/ex01.child.html","childNaver"
+        ,"width= 500, height = 400, left = 100, top = 100");
+        windName++;
+    }
+    function alertClick(){
+        //alert('값') : 브라우저에 경고창 출력
+        alert('출력할 값');
+    }
+    function confirmClick(){
+        // confirm('질문내용') : [확인] - true, [취소] - false
+        let result = confirm('질문 내용'); //리턴값이 있음.
+        console.log("result : " + result);
+    }
+    function promptClick(){
+        //prompt('질문내용') : 질문과 답면을 입력하는 창
+        let result = prompt('1 + 1 = ?'); //입력한 값을 리턴받음
+        console.log("result : " + result);
+
+    }
+</script>
+</html>

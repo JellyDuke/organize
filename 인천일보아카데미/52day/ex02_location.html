@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 5px;
+            border:  1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex02_location.html</h1>
+    
+    <a href="http://www.google.com">구글</a>
+    <button onclick="page('www.naver.com')">네이버</button>
+    <button onclick="page('www.google.com')">구글</button>
+
+    <div onclick="page('www.daum.net')">
+        다음
+    </div>
+    <button onclick="reloadBtn()">새로고침버튼</button>
+<script>
+    let hostVal = location.host;
+    console.log("hostVal : " +hostVal);
+    let searchVal = location.search;
+    console.log("searchVal : " + searchVal);
+    //?mid=abcd&mpw=1234
+    console.log(searchVal.replace("?","").split("&"));
+
+    function page(url){
+        //location.href
+        let nowUrl = location.href;
+        //location객체 브라우저에서 제공되는 기본 객체 의 href를 nowUrl에 저장
+        console.log(nowUrl);
+        location.href = "http://" +url;
+    }
+    function reloadBtn(){
+        location.reload();
+        //location 브라우저.다시불러오기.(새로고침)
+    }
+</script>
+</html>
