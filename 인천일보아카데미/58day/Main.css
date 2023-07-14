@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+        div{
+            border: 5px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+        
+        #header{
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+            background-color: rgb(122, 201, 232);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        #nav>ul{
+            display: flex;
+            list-style-type: none;
+            padding: 0px;
+            margin-right: 20px;
+            justify-content: flex-end;
+        }
+        
+        #nav>ul>li{
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+        #nav>ul>li>a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+        
+        #contents{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS8UUEwvtIuQplJjwpB17WZR1M6HtKVwWV4w&usqp=CAU);
+            min-height: 500px;
+        }
