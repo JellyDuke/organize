@@ -1,0 +1,9 @@
+1. window -> preferences -> enco 검색 -> utf8
+2. 좌상단 아래 서버 -> tomcat 9 -> finish
+
+
+File -> new -> Spring Leqacy project 
+> (Templates)spring MVC project -> next
+> 이름 ex) com.springProject01.controller
+> 메인. 프로젝트 명. ~~로 프로젝트를 만들거다
+> projcet 파일 select > Run as > Run On server
