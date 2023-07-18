@@ -1,3 +1,6 @@
+번외
+파일 jar 실행법: shift + 우클릭 Widow PowerShell 
+java -jar 파일명.jar
 
 Spring
 
@@ -14,7 +17,6 @@ File -> new -> Spring Leqacy project
 
 
 
-
 파라미터(parameter) 또는 매개변수(媒介變數)는 
 수학과 통계학에서 어떠한 시스템이나 함수의 특정한 성질을 나타내는 변수
 
@@ -28,12 +30,31 @@ value = 요청받을 url, method = 어떤 요청(GET, POST, PUT, DELETE 등)
 @RequestParam(value="teststr") String tstr, @RequestParam(value="testval", defaultValue ="TEST") String testval
 페이지에서 받은 파라미터 teststr을 String tstr로 하겠다. 페이지에서 보내주는 파라미터 testval(이)가 없으면 기본값을 TEST를 주겠다. 이 변수를 testval로 하겠다.
 
+@Data: field 필드 자동 생성.(lombok 라이브러리 필요.)
 
 
--servlet - context.xml
+
+- servlet-context.xml : 웹과 서버관의 외부 설정이 필요 할때 사용하는 설정 파일.
 <context:component-scan base-package="com.springProject01.controller" />
-컨트롤러 사용 할 수 있는 이유. 지정된 패키지를 스캔.
-스캔이 된 파일에는 S가 붙어 있다. 관리는 beans
+컨트롤러 사용 할 수 있는 이유. 지정된 패키지를 스캔. 스캔이 된 파일에는 S가 붙어 있다. 관리는 beans
+
+
+
+- root-context.xml : 서버 안에 들어 왔을때. 내부에서 쓰일 설정 파일.
+DB관련 설정. CONNECTION
+
+
+
+- porm.xml: 드라이버나, 라이브러리에 관련된 설정.
+<properties>: xml에서 사용하는 변수명. (*properties: 고유 특성, 속성)
+  <java-version>.. 등등
+    <version>${org.springframework-version}</version> 변수 가져와서 쓰기
+<dependencies> > <dependency> : 라이브러리 관련 설정. (*dependency: 의존성)
+  <dependency>로 필요한 라이브러리를 태그를 한다.
+maven-compiler-plugin: 라이브러리를 빌드. 사용하기위한 도구.
+  maven-source: 쓰고있는 버전(실제 프로젝트 자바 버전)
+  maven-target: 컴파일 할 버전
+
 
 
 return "main"; -> main.jsp /WEB-INF/views/main.jsp 
