@@ -1,1 +1,13 @@
+Spring
 
+@Controller
+컨트롤러, 사용자 처리 수행(중간 제어자, 역활분담)
+
+@RequestMapping(value = "/");
+value = 요청받을 url, method = 어떤 요청(GET, POST, PUT, DELETE 등)
+
+return "main"; -> main.jsp /WEB-INF/views/main.jsp 
+경로는 servlet - context.xml에서 수정 가능.
+
+return "board/main"; /WEB-INF/views/board/main.jsp
+어디에있는 파일이라는 경로 붙이는 법.
