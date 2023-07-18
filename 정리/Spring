@@ -1,6 +1,20 @@
 
 Spring
 
+1. window -> preferences -> enco 검색 -> utf8
+2. 좌상단 아래 서버 -> tomcat 9 -> finish
+
+
+File -> new -> Spring Leqacy project 
+> (Templates)spring MVC project -> next
+> 이름 ex) com.springProject01.controller
+> 메인. 프로젝트 명. ~~로 프로젝트를 만들거다
+> projcet 파일 select > Run as > Run On server
+> package 파일명 com.만든 프로젝트명, ~~이름으로 만들거다.
+
+
+
+
 파라미터(parameter) 또는 매개변수(媒介變數)는 
 수학과 통계학에서 어떠한 시스템이나 함수의 특정한 성질을 나타내는 변수
 
@@ -44,6 +58,8 @@ mav.addObject("이름", 데이터); //ArrayList<Board> bList = svc.getBoardList(
 2.포워딩 - 페이지 지정
 mav.setViewName("페이지 이름"); /WEB-INF/views/main.jsp
 페이지를 담기.
+mav.setViewName("redirect:/"); // 요청 redirect: 다시 지시하다.
+
 
 
 
