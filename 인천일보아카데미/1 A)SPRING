@@ -27,15 +27,11 @@ return "main"; -> main.jsp /WEB-INF/views/main.jsp
 return "board/main"; /WEB-INF/views/board/main.jsp
 어디에있는 파일이라는 경로 붙이는 법.
 
-
-
 public String mainPage(Model model)
 Model 객체 선언. 데이터 주고 받는 것.
 
 model.addAttribute("testVal",1111);
 //reqest.setAttribute(); 
-
-
 
 public ModelAndView mainPage(Model model)
 ModelAndView 객체는 데이터와 페이지를 가지고 한번에 넘겨주는 객체이다.
