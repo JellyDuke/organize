@@ -1,11 +1,18 @@
 Spring
 
+파라미터(parameter) 또는 매개변수(媒介變數)는 
+수학과 통계학에서 어떠한 시스템이나 함수의 특정한 성질을 나타내는 변수
+
 -@ 어노테이션 코드 사이에 주석처럼 쓰여서 특별한 의미, 기능을 수행하도록 하는 기술이다.
 @Controller 
 컨트롤러, 사용자 처리 수행(중간 제어자, 역활분담)
 
 @RequestMapping(value = "/");
 value = 요청받을 url, method = 어떤 요청(GET, POST, PUT, DELETE 등)
+
+@RequestParam(value="teststr") String tstr, @RequestParam(value="testval", defaultValue ="TEST") String testval
+페이지에서 받은 파라미터 teststr을 String tstr로 하겠다. 페이지에서 보내주는 파라미터 testval(이)가 없으면 기본값을 TEST를 주겠다. 이 변수를 testval로 하겠다.
+
 
 
 -servlet - context.xml
