@@ -23,6 +23,10 @@ File -> new -> Spring Leqacy project
 -@ 어노테이션 코드 사이에 주석처럼 쓰여서 특별한 의미, 기능을 수행하도록 하는 기술이다.
 @Controller 
 컨트롤러, 사용자 처리 수행(중간 제어자, 역활분담)
+ex) @Controller
+    public class MemberController
+이걸 붙여야 애가 컨트롤러 입니다. 하는 것.
+import해야함.
 
 @RequestMapping(value = "/");
 value = 요청받을 url, method = 어떤 요청(GET, POST, PUT, DELETE 등)
