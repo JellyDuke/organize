@@ -1,4 +1,5 @@
 번외
+
 파일 jar 실행법: shift + 우클릭 Widow PowerShell 
 java -jar 파일명.jar
 
@@ -34,13 +35,23 @@ value = 요청받을 url, method = 어떤 요청(GET, POST, PUT, DELETE 등)
 @RequestParam(value="teststr") String tstr, @RequestParam(value="testval", defaultValue ="TEST") String testval
 페이지에서 받은 파라미터 teststr을 String tstr로 하겠다. 페이지에서 보내주는 파라미터 testval(이)가 없으면 기본값을 TEST를 주겠다. 이 변수를 testval로 하겠다.
 
-@Data: field 필드 자동 생성.(lombok 라이브러리 필요.)
+@Data: field 필드 자동 생성. getter.. setter.. (lombok 라이브러리 필요.)
+
+@Service: 서비스 기능을 할 어노테이션. servlet에서는 이제 애가 서비스입니다. 하고 인식을 한다.
+
+@Autowired: Spring에서 스캔이 되어있는 객체를 자동으로 만들어서 연결 시켜준다.
+ex) @Autowired
+	MemberService msvc;
+
+@Insert("INSERT INTO ~ VALUES(#{~}, #{~}..)"): sql insert하기 위한 어노테이션 mybatis를 이용하는 것.
 
 
 
 - servlet-context.xml : 웹과 서버관의 외부 설정이 필요 할때 사용하는 설정 파일.
 <context:component-scan base-package="com.springProject01.controller" />
 컨트롤러 사용 할 수 있는 이유. 지정된 패키지를 스캔. 스캔이 된 파일에는 S가 붙어 있다. 관리는 beans
+com.springProject01.* 이렇게 하면 com.springProject01에 있는 파일들을 모두 스캔 하겠다.
+스캔을 해야 컨트롤러의 기능을 수행한다.
 
 
 
@@ -76,16 +87,42 @@ model.addAttribute("testVal",1111);
 public ModelAndView mainPage(Model model)
 ModelAndView 객체는 데이터와 페이지를 가지고 한번에 넘겨주는 객체이다.
 
+
+
+
 1. 데이터 - SERVICE
 mav.addObject("이름", 데이터); //ArrayList<Board> bList = svc.getBoardList();
 데이터를 담기.
 
 2.포워딩 - 페이지 지정
 mav.setViewName("페이지 이름"); /WEB-INF/views/main.jsp
-페이지를 담기.
+
+mav.setViewName("board/boardWriteForm");
+/WEB-INF/views/board/board/WriteForm.jsp 포워딩 해줄 경로를 보여주기.
+
 mav.setViewName("redirect:/"); // 요청 redirect: 다시 지시하다.
 
 
 
 
+interface
+-> mybatis로 쉽게 database를 작성하기 위해 넣은 라이브러리. 
+-> class대신에 interface로 만듦.
 
+
+
+
+<Mybatis 라이브러리 관련 내용>
+
+-mybatis root-context.xml 설정
+<mybatis-spring:scan base-package="사용하는 패키지 이름."/>
+mybatis 스캔.
+
+-DataBase.
+쿼리문 쓰기위한 방법
+@INSERT.. @SELECT ...이외에
+
+src/main/resources/mybatis-config.xml 
+mybatis 홈페이지 -> start -> 설정문 태그들 복사.. 붙여넣어서 사용.
+사용하는 database sql의 파일의 xml 파일 따로 만듦.
+boardMapper.xml -> 홈페이지 start의 mapper 내용 복사.. 입맛에 맞게 설정..
