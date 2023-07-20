@@ -64,6 +64,8 @@ com.springProject01.* 이렇게 하면 com.springProject01에 있는 파일들�
 
 - root-context.xml : 서버 안에 들어 왔을때. 내부에서 쓰일 설정 파일.
 DB관련 설정. CONNECTION
+Namespaces 들어가서 사용할 라이브러리들 체크. ex) jdbc, mybatis -> database
+
 
 
 
@@ -78,8 +80,11 @@ maven-compiler-plugin: 라이브러리를 빌드. 사용하기위한 도구.
   maven-target: 컴파일 할 버전
 
 - porm.xml 라이브러리 설정
-maven 사이트에서 설정할 항목을 검색 후 버전 바꾸기.
-
+maven 사이트에서 설정할 항목을 검색 후 버전 바꾸기. 혹은 추가
+경고 사항 - spring depedency와 버전이 같아야 한다.
+<dependency>
+	추가할 라이브러리
+</dependency>
 
 
 
