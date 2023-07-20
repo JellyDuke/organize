@@ -52,6 +52,7 @@ ex) @Autowired
 
 @Insert("INSERT INTO ~ VALUES(#{~}, #{~}..)"): sql insert하기 위한 어노테이션 mybatis를 이용하는 것.
 
+@ResponseBody: 응답을 데이터로 해주겠다.
 
 
 - servlet-context.xml : 웹과 서버관의 외부 설정이 필요 할때 사용하는 설정 파일.
