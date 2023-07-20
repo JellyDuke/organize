@@ -18,6 +18,13 @@ File -> new -> Spring Leqacy project
 
 
 
+Multiple Contexts have a path of "/controller"
+프로젝트 두개 이상일때 서버 처음 실행할때 나오는 오류 메시지
+path 경로가 중복, 동일해서 오류가 남. 
+해결법. > tomcat서버 더블클릭 > Modules > 변경할 파일 > edit or remove/rename
+
+
+
 파라미터(parameter) 또는 매개변수(媒介變數)는 
 수학과 통계학에서 어떠한 시스템이나 함수의 특정한 성질을 나타내는 변수
 
@@ -69,6 +76,10 @@ DB관련 설정. CONNECTION
 maven-compiler-plugin: 라이브러리를 빌드. 사용하기위한 도구.
   maven-source: 쓰고있는 버전(실제 프로젝트 자바 버전)
   maven-target: 컴파일 할 버전
+
+- porm.xml 라이브러리 설정
+maven 사이트에서 설정할 항목을 검색 후 버전 바꾸기.
+
 
 
 
@@ -126,3 +137,7 @@ src/main/resources/mybatis-config.xml
 mybatis 홈페이지 -> start -> 설정문 태그들 복사.. 붙여넣어서 사용.
 사용하는 database sql의 파일의 xml 파일 따로 만듦.
 boardMapper.xml -> 홈페이지 start의 mapper 내용 복사.. 입맛에 맞게 설정..
+
+
+
+
