@@ -144,7 +144,10 @@ mybatis 홈페이지 -> start -> 설정문 태그들 복사.. 붙여넣어서 �
 사용하는 database sql의 파일의 xml 파일 따로 만듦.
 boardMapper.xml -> 홈페이지 start의 mapper 내용 복사.. 입맛에 맞게 설정..
 
-
-
+쿼리문을 작성할때 매개변수가 두개 이상일때
+@Select ("SELECT * FROM MEMBERS WHERE MID = #{mid} AND MPW = #{inputPw}")
+	Member selectMemberLoginLogin(@Param("inputId") String inputId, @Param("inputPw") String inputPw);
+이런식으로 작성 해야한다.
+어노테이션으로 @Parm을 붙여 줘야하고. 파라미터명과 SQL문이 같아야 한다.
 
 
