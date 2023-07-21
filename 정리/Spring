@@ -54,6 +54,9 @@ ex) @Autowired
 
 @ResponseBody: 응답을 데이터로 해주겠다.
 
+@Param:파라미터를 ~~로 해주겠다.
+
+
 
 - servlet-context.xml : 웹과 서버관의 외부 설정이 필요 할때 사용하는 설정 파일.
 <context:component-scan base-package="com.springProject01.controller" />
@@ -67,6 +70,7 @@ com.springProject01.* 이렇게 하면 com.springProject01에 있는 파일들�
 DB관련 설정. CONNECTION
 Namespaces 들어가서 사용할 라이브러리들 체크. ex) jdbc, mybatis -> database
 
+-classpath: src/main/resource 의 경로를 의미한다.
 
 
 
@@ -142,12 +146,33 @@ mybatis 스캔.
 src/main/resources/mybatis-config.xml 
 mybatis 홈페이지 -> start -> 설정문 태그들 복사.. 붙여넣어서 사용.
 사용하는 database sql의 파일의 xml 파일 따로 만듦.
+
+ex)파일 생성
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+ 	<mappers>
+ 		<mapper resource="mapper/MemberMapper.xml"/>
+ 	</mappers>
+</configuration>
 boardMapper.xml -> 홈페이지 start의 mapper 내용 복사.. 입맛에 맞게 설정..
+
+ex) 경로대로 파일생성 이후..
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring_memberBoard.dao.MemberDao;">
+ 	<select id = "selectMemberInfo_mapper" parameterType="String" resultType="com.spring_memberBoard.dto..Member">
+ 		SELECT * FROM MEMBERS WHERE MID = #{inputId}
+ 	</select>
+</mapper>
 
 쿼리문을 작성할때 매개변수가 두개 이상일때
 @Select ("SELECT * FROM MEMBERS WHERE MID = #{mid} AND MPW = #{inputPw}")
 	Member selectMemberLoginLogin(@Param("inputId") String inputId, @Param("inputPw") String inputPw);
 이런식으로 작성 해야한다.
 어노테이션으로 @Parm을 붙여 줘야하고. 파라미터명과 SQL문이 같아야 한다.
+
 
 
