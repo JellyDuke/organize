@@ -32,3 +32,7 @@ null 값을 처리할 수 없는 int type에 null 값(혹은 공백)이 들어�
 <select id="selectbno" >
 	SELECT NVL(MAX(BNO),0) FROM BOARDS -> BNO를 0값으로 바꿔줌.
 	</select>
+
+
+sql insert시 commit 안하고 페이지 데이터 넘겨줄시 
+페이지가 무한 로딩이 되는 오류가 있다.
