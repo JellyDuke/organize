@@ -24,3 +24,11 @@ q'com.spring_memberBoard.dao.BoardDao.selectbno' attempted to return null from a
 
 null 값을 처리할 수 없는 int type에 null 값(혹은 공백)이 들어간다는 오류이다. 
 해결 방법은 간단하다. return 되는 과정을 int 에서 Integer로 치환만 시켜주면 된다.
+혹은 dao sql문에서 null값이 들어가 문제가 생김. 
+<select id="selectbno" >
+	SELECT MAX(BNO) FROM BOARDS  -> BNO가 null이다.  
+	</select> 
+
+<select id="selectbno" >
+	SELECT NVL(MAX(BNO),0) FROM BOARDS -> BNO를 0값으로 바꿔줌.
+	</select>
