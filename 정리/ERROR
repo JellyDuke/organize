@@ -15,7 +15,7 @@ null.. 변수명.. set~~.. sql 확인.
 
 sql insert error
 ORA-02291: 무결성 제약조건(NAN_BABO.FK_BOARDS)이 위배되었습니다- 부모 키가 없습니다
-
+부모키의 참조되는 것을 확인해야함. fk를 mid 참조 bwriter 의 mid가 같아야함.
 
 
 Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Mapper method
