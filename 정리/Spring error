@@ -1,8 +1,0 @@
-
-Origin 서버가 대상 리소스를 위한 현재의 representation을 찾지 못했거나, 그것이 존재하는지를 밝히려 하지 않습니다.
-흔한 404에러 url를 찾지 못했거나 페이지의 이름, 지정해둔 변수명이 다르거나 오타를 확인.
-혹은 html 요청 action.. form.. 등 확인
-
-java.sql.SQLException: ORA-17004: 열 유형이 부적합합니다.: 1111
-g{property='mem.mid', mode=IN, javaType=class java.lang.Object, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}....
-null.. 변수명.. set~~.. sql 확인.
