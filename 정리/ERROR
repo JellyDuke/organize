@@ -36,3 +36,10 @@ null 값을 처리할 수 없는 int type에 null 값(혹은 공백)이 들어�
 
 sql insert시 commit 안하고 페이지 데이터 넘겨줄시 
 페이지가 무한 로딩이 되는 오류가 있다.
+
+
+ Failed to convert value of type 'com.spring_memberBoard.dto.Member'
+to required type 'java.lang.String';
+nested exception is java.lang.IllegalStateException: Cannot convert value of type
+'com.spring_memberBoard.dto.Member' to required type 
+'java.lang.String': no matching editors or conversion strategy found
