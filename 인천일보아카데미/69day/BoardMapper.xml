@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring_memberBoard.dao.BoardDao">
+	<select id="selectbno" >
+	SELECT NVL(MAX(BNO),0) FROM BOARDS
+	</select>
+	<insert id="insertBoard">
+	INSERT INTO BOARDS(BNO, BWRITER, BTITLE, BCONTENTS, BHITS, BDATE, BFILENAME, BSTATE)
+	VALUES(#{board.bno},#{board.bwriter},#{board.btitle},#{board.bcontents}, 0, SYSDATE, #{board.bfilename},'1')
+	</insert>
+	
+	<select id="selectBoard" resultType = "com.spring_memberBoard.dto.Board" parameterType="int">
+	SELECT * FROM BOARDS WHERE BNO = #{bno}
+	</select>
+	
+	<select id="selectBoardList" resultType="com.spring_memberBoard.dto.Board" >
+	SELECT * FROM BOARDS WHERE BSTATE = '1' ORDER BY BDATE DESC
+	</select>
+	
+	<select id ="selectMaxRenum">
+	SELECT NVL(MAX(RENUM),0) FROM REPLYS 
+	</select>
+	
+	<insert id = "insertReply">
+	INSERT INTO REPLYS(RENUM, REBNO, REMID, RECOMMENT, REDATE, RESTATE)
+	VALUES(#{re.renum},#{re.rebno},#{re.remid},#{re.recomment},SYSDATE,'1')
+	</insert>
+	
+	<select id = "selectReplyList" resultType="com.spring_memberBoard.dto.Reply" parameterType="int" >
+		SELECT * FROM REPLYS WHERE REBNO = #{rebno} AND RESTATE = '1' ORDER BY REDATE
+	</select>
+	
+	<select id ="selectTotalPost" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM BOARDS WHERE BWRITER = #{infoId}
+	 </select>
+	<select id="selectTotalReply" resultType="int" parameterType="String">
+		SELECT COUNT(*) FROM REPLYS WHERE REMID = #{infoId}
+	</select>
+</mapper>
