@@ -18,6 +18,7 @@ ORA-02291: 무결성 제약조건(NAN_BABO.FK_BOARDS)이 위배되었습니다- 
 부모키의 참조되는 것을 확인해야함. fk를 mid 참조 bwriter 의 mid가 같아야함.
 
 
+
 Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Mapper method
 q'com.spring_memberBoard.dao.BoardDao.selectbno' attempted to return null from a method with a primitive return type (int).
 원시 반환 형식(int)을 사용하여 메서드에서 null을 반환하려고 했습니다.
@@ -38,8 +39,12 @@ sql insert시 commit 안하고 페이지 데이터 넘겨줄시
 페이지가 무한 로딩이 되는 오류가 있다.
 
 
+
  Failed to convert value of type 'com.spring_memberBoard.dto.Member'
 to required type 'java.lang.String';
 nested exception is java.lang.IllegalStateException: Cannot convert value of type
 'com.spring_memberBoard.dto.Member' to required type 
 'java.lang.String': no matching editors or conversion strategy found
+
+mav.setViewName("redirect:/MyInfo"); 가 아닌 mav.setViewName("member/MyInfo");로 고쳤을때 해결됨
+
