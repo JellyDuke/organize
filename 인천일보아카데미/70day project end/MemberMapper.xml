@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring_memberBoard.dao.MemberDao">
+
+	<select id="selectMemberInfo_mapper" resultType="mem" parameterType="String">
+		SELECT * FROM MEMBERS WHERE MID = #{inputId }
+	</select>
+	
+	<insert id="joinInsertInfo_mapper">
+		INSERT INTO MEMBERS(MID, MPW, MNAME, MBIRTH, MEMAIL, MSTATE) VALUES(#{mem.mid }, #{mem.mpw }, #{mem.mname }, #{mem.mbirth }, #{mem.memail}, #{mem.mstate})
+	</insert>
+  
+  	<select id="selectMemberLogin" resultType="mem" parameterType = "String">
+  		SELECT * FROM MEMBERS WHERE MID = #{mid} AND MPW = #{mpw}
+  	</select>
+  	
+  	<select id="selectMemberInfo" resultType="mem" parameterType="String">
+  		SELECT * FROM MEMBERS WHERE MID = #{infoId }
+  	
+  	</select>
+  	<update id="updateMemberInfo">
+  		UPDATE MEMBERS 
+  		SET MPW = #{member.mpw}, MNAME = #{member.mname}, MBIRTH = #{member.mbirth}, MEMAIL = #{member.memail} 
+  		WHERE MID = #{member.mid}
+  	</update>
+</mapper>
