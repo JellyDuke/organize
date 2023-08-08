@@ -188,7 +188,8 @@ ex) 경로대로 파일생성 이후..
 	 var sock = new SockJS('chatSocket'); //주소
 	 sock.onopen = function() {
 	     console.log('open');
-	     sock.send('test');
+	     sock.send('test'); //서버로 메세지 전송
+	     	
 	 };
 
 	 sock.onmessage = function(e) {
