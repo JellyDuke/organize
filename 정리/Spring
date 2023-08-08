@@ -176,3 +176,26 @@ ex) 경로대로 파일생성 이후..
 
 
 
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+              -WebSocket-
+
+	@Override
+	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+		//접속을 하는 경우에 실행
+	}
+
+	@Override
+	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+		//접속중인 클라이언트에서 데이터를 전송하면 실행
+	}
+
+	@Override
+	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+		//접속을 해제하는 경우에 실행
+	}
+
+
