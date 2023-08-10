@@ -53,3 +53,11 @@ Try setting a different JdbcType for this parameter or a different jdbcTypeForNu
 Cause: java.sql.SQLException: ORA-17004: 열 유형이 부적합합니다.: 1111
 
 disabled을 사용하면 페이지에서 태그가 작동을 하지 않는다. readonly="readonly"로 바꿔줘야한다.
+
+
+
+ERROR: org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator 
+- Closing session due to exception for WebSocketServerSockJsSession[id=lbsbs30r]
+java.lang.IllegalStateException: Cannot send a message when session is closed
+
+세션 닫혀서 안됨. 이때 해결책 서버 리스타트 했더니 정상적으로 작동함.
