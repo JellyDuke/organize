@@ -61,3 +61,4 @@ ERROR: org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator
 java.lang.IllegalStateException: Cannot send a message when session is closed
 
 세션 닫혀서 안됨. 이때 해결책 서버 리스타트 했더니 정상적으로 작동함.
+
