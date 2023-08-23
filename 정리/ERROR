@@ -62,3 +62,12 @@ java.lang.IllegalStateException: Cannot send a message when session is closed
 
 세션 닫혀서 안됨. 이때 해결책 서버 리스타트 했더니 정상적으로 작동함.
 
+
+
+Error creating bean with name 'sqlSessionFactory' defined
+in ServletContext resource [/WEB-INF/spring/root-context.xml]: 
+Invocation of init method failed; nested exception is java.lang.Error:
+Unresolved compilation problem: 
+
+경로 오류
+
