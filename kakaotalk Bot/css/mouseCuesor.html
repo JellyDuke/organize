@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mouseCursor.css">
+    <link href="reset.css" rel="stylesheet" /> 
+
+</head>
+<body>
+    <div class="carousel" data-cursor="carousel">cursor</div>
+    <a href="#" class="email" data-cursor="link" data-name="Send Email">abc@gmail.com</a>
+    <a href="#" class="addr" data-cursor="link" data-name="Show map">aaa</a>
+    <img src="img.jpg" class="img-1" data-cursor="img" data-name="Show Img">
+
+    <div id="mouse-cursor">
+        <div></div>
+    </div>
+
+</body>
+
+<script>
+    let scale = 1;
+    let stage = "";
+    let carouselDirection = "";
+    const cursorParent = document.getElementById("mouse-cursor");
+    const cursorChild = cursorParent.children[0];
+    window.addEventListener("mousemove", mousemove);
+    window.addEventListener("mousedown", mousedown);
+    window.addEventListener("mouseup", mouseup);
+
+    let cursorX = 0, cursorY = 0;
+
+    function mousemove(e){
+       // console.log(e.pageX); // page문서의 x축 크기 기준 
+       //console.log(cursorParent.offsetWidth); // cursorParent의 너비
+      
+        cursorX = e.pageX-cursorParent.offsetWidth / 2;
+        cursorY = e.pageY-cursorParent.offsetHeight / 2;
+        cursorParent.style.transform=`translate3d(${cursorX}px, ${cursorY}px, 0)`;
+        switch(e.target.getAttribute("data-cursor")){
+            case "carousel":
+                if(stage==="carousel") return // case가 한번만 실행되게 해준다 
+            carouselDirection = cursorX < innerWidth / 2 ? "Prev" : "Next";
+            cursorChild.setAttribute("data-name", carouselDirection);
+                scale=5;
+                stage="carousel";
+                //console.log("carousel");
+                cursorParent.className="cursor-text-mode";
+                break;
+            case "link":
+                if(stage==="link") return
+            cursorChild.setAttribute("data-name", e.target.getAttribute("data-name"));
+            scale=5;
+            stage="link";
+            cursorParent.className="cursor-text-mode";
+          //  console.log("link");
+            break;
+            case "img":
+                if(stage==="img") return
+            cursorChild.setAttribute("data-name", e.target.getAttribute("data-name"));
+            scale=5;
+            stage="img";
+            cursorParent.className="";
+         //   console.log("img");
+            break;
+            default:
+                if(stage==="") return
+                scale=1;
+                stage="";
+            cursorChild.setAttribute("data-name", "");
+       //     console.log("default");
+                break;
+        }
+        cursorChild.style.setProperty("--cursor-scale", scale);
+    }
+    function mousedown(e){
+        scale *= 0.8;
+        cursorChild.style.setProperty("--cursor-scale", scale);
+    }
+    function mouseup(e){
+        scale *= 1.25;
+        cursorChild.style.setProperty("--cursor-scale", scale);
+    }
+</script>
+</html>
